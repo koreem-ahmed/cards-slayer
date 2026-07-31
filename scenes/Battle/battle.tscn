@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://2twojcaq2v40"]
+
+[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://assets/background.png" id="1_ha178"]
+
+[node name="Battle" type="Node2D" unique_id=1531528685]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="Sprite2D" parent="." unique_id=2005869498]
+modulate = Color(0.33809972, 0.3380997, 0.33809966, 1)
+texture = ExtResource("1_ha178")
+centered = false
+metadata/_edit_lock_ = true
