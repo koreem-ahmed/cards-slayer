@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vgelrh8ijl72"]
 
-[ext_resource type="Theme" uid="uid://bfbsphhsjwiit" path="res://resources/Main_theme.tres" id="1_o6q86"]
+[ext_resource type="Theme" uid="uid://bfbsphhsjwiit" path="res://assets/themes/Main_theme.tres" id="1_o6q86"]
 [ext_resource type="Script" uid="uid://8rkf6vqwk3nv" path="res://scenes/Card Ui/card_ui.gd" id="2_oqmqb"]
 [ext_resource type="Script" uid="uid://bfoq3bhwb66k4" path="res://scenes/Card Ui/card_state_machine.gd" id="3_4osb5"]
 [ext_resource type="Script" uid="uid://ddegc651pjmux" path="res://scenes/Card Ui/Card States/card_base.gd" id="4_yulpa"]
