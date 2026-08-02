@@ -15,6 +15,10 @@ run/main_scene="uid://2twojcaq2v40"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://btpnwcktd5mra"
 
+[autoload]
+
+Events="*uid://dt4rte0seyd18"
+
 [display]
 
 window/size/viewport_width=256
@@ -44,6 +48,7 @@ right_mouse={
 
 2d_physics/layer_1="card_target_selector"
 2d_physics/layer_2="card_drop_area"
+2d_physics/layer_3="enemies"
 
 [physics]
 
