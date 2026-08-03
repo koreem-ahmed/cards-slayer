@@ -35,8 +35,3 @@ func create_instance() -> Resource:
 	instance.discard = CardPile.new()
 	return instance
 	
-	
-	
-	
-	
-	

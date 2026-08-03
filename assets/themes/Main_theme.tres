@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bfbsphhsjwiit"]
 
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="1_rpuug"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="1_mnck7"]
 
 [resource]
-default_font = ExtResource("1_rpuug")
+default_font = ExtResource("1_mnck7")
 default_font_size = 6

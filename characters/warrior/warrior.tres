@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://bq3wx76da57kj"]
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://bq3wx76da57kj"]
 
 [ext_resource type="Script" uid="uid://qvbqe5cy1sgr" path="res://resources/character_stats.gd" id="1_nliw2"]
 [ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="1_xju84"]
@@ -9,6 +9,6 @@ script = ExtResource("1_nliw2")
 starting_deck = ExtResource("3_wgifn")
 cards_per_turn = 4
 max_mana = 3
-max_health = 5
+max_health = 35
 art = ExtResource("1_xju84")
 metadata/_custom_type_script = "uid://qvbqe5cy1sgr"

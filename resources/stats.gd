@@ -18,7 +18,7 @@ func set_health(value: int) -> void:
 
 
 func set_block(value: int) -> void:
-	health = clampi(value, 0, 999)
+	block = clampi(value, 0, 999)
 	stats_changed.emit()
 
 
@@ -40,7 +40,3 @@ func create_instance() -> Resource:
 	instance.health = max_health
 	instance.block = 0
 	return instance
-	
-	
-	
-	
