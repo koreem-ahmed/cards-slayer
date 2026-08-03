@@ -8,9 +8,8 @@ class_name ManaUI
 @onready var mana_label: Label = $Mana_Label
 
 func _ready() -> void:
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	char_stats.mana = 2
-
 
 func set_char_stats(value: CharacterStats) -> void:
 	char_stats = value
@@ -22,6 +21,7 @@ func set_char_stats(value: CharacterStats) -> void:
 		await ready
 	
 	on_state_changed()
+
 
 func on_state_changed() -> void:
 	mana_label.text = "%s/%s" % [char_stats.mana, char_stats.max_mana] 

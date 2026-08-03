@@ -10,12 +10,16 @@ func enter() -> void:
 		card_ui.reparent(ui_layer)
 	
 	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLEBOX)
+	Events.card_drag_starts.emit(card_ui)
 	
 	min_time_elapaed = false
 	var hold_timer := get_tree().create_timer(DRAG_MINIMUM_TIME, false)
 	hold_timer.timeout.connect(func(): min_time_elapaed = true)
-	
-	
+
+
+func exit() -> void:
+	Events.card_drag_ends.emit(card_ui)
+
 
 func on_input(event: InputEvent) -> void:
 	var single_targeted := card_ui.card.is_single_targeted()
@@ -25,7 +29,6 @@ func on_input(event: InputEvent) -> void:
 	
 	if single_targeted and mouse_motion and card_ui.targets.size() > 0:
 		state_transition.emit(self, CardState.State.AIMING)
-		print("aiming")
 		return
 	
 	

@@ -9,6 +9,7 @@ const DRAG_STYLEBOX := preload("res://assets/themes/card_dragging_stylebox.tres"
 const HOVER_STYLEBOX := preload("res://assets/themes/card_hover_stylebox.tres")
 
 @export var card: Card : set = set_card
+@export var char_stats: CharacterStats : set = set_char_stats
 
 @onready var panel: Panel = $Panel
 @onready var cost: Label = $Cost
@@ -19,9 +20,16 @@ const HOVER_STYLEBOX := preload("res://assets/themes/card_hover_stylebox.tres")
 
 var parent: Control
 var tween: Tween
+var playable := true : set = set_playable
+var disabled := false
 
 
 func _ready() -> void:
+	Events.card_aim_starts.connect(_on_card_drag_or_aiming_started)
+	Events.card_drag_starts.connect(_on_card_drag_or_aiming_started)
+	Events.card_aim_ends.connect(_on_card_drag_or_aiming_ended)
+	Events.card_drag_ends.connect(_on_card_drag_or_aiming_ended)
+	
 	card_state_machine.init(self)
 
 
@@ -33,6 +41,13 @@ func animate_to_position(new_position: Vector2, duration: float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "global_position", new_position, duration)
 
+
+func play() -> void:
+	if not card:
+		return
+	
+	card.play(targets, char_stats)
+	queue_free()
 
 func _on_gui_input(event: InputEvent) -> void:
 	card_state_machine.on_gui_input(event)
@@ -53,14 +68,43 @@ func set_card(value: Card) -> void:
 	card = value
 	cost.text = str(card.cost)
 	icon.texture = card.icon
-	
+
+
+func set_char_stats(value: CharacterStats) -> void:
+	char_stats = value
+	char_stats.stats_changed.connect(_on_char_stats_changed)
+
+
+func set_playable(value: bool) -> void:
+	playable = value
+	if not playable:
+		cost.add_theme_color_override("font_color", Color.RED)
+		icon.modulate = Color(1, 1, 1, 0.5)
+	else:
+		cost.remove_theme_color_override("font_color")
+		icon.modulate = Color(1, 1, 1, 1)
 
 
 func _on_drop_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
-	
+
 
 func _on_drop_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
+
+
+func _on_card_drag_or_aiming_started(used_card: CardUi) -> void:
+	if used_card == self:
+		return
 	
+	disabled = true
+
+
+func _on_card_drag_or_aiming_ended(used_card: CardUi) -> void:
+	disabled = false
+	self.playable = char_stats.can_play_card(card)
+
+
+func _on_char_stats_changed() -> void:
+	self.playable = char_stats.can_play_card(card)
