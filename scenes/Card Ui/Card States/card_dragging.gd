@@ -9,8 +9,7 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 	
-	card_ui.color_rect.color = Color.NAVY_BLUE
-	card_ui.state.text = "DRAGGING"
+	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLEBOX)
 	
 	min_time_elapaed = false
 	var hold_timer := get_tree().create_timer(DRAG_MINIMUM_TIME, false)

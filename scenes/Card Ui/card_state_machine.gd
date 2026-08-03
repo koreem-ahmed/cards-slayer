@@ -36,7 +36,7 @@ func on_mouse_entered() -> void:
 
 func on_mouse_exited() -> void:
 	if current_state:
-		current_state.on_mouse_entered()
+		current_state.on_mouse_exited()
 
 func _on_state_transition(from: CardState, to: CardState.State) -> void:
 	if from != current_state:

@@ -4,8 +4,6 @@ const MOUSE_Y_SNAPBACK_THREHOLD := 138
 
 
 func enter() -> void:
-	card_ui.color_rect.color = Color.WEB_PURPLE
-	card_ui.state.text = "AIMING"
 	card_ui.targets.clear()
 	var offset := Vector2(card_ui.parent.size.x / 2, -card_ui.size.y / 2)
 	offset.x -= card_ui.size.x / 2
