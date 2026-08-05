@@ -1,11 +1,16 @@
 extends Node2D
 
+@export var char_stats: CharacterStats
 
-# Called when the node enters the scene tree for the first time.
+@onready var battle_ui: CanvasLayer = $BattleUi as BattleUI
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	var new_stats: CharacterStats = char_stats.create_instance()
+	battle_ui.char_stats = new_stats
+	
+	start_battle(new_stats)
+	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func start_battle(stats: CharacterStats) -> void:
+	print("battle started")

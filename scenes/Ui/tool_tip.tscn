@@ -29,6 +29,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_islpm")
 expand_mode = 1
 stretch_mode = 5

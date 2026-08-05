@@ -13,7 +13,7 @@ func enter() -> void:
 
 
 
-func on_input(event: InputEvent) -> void:
+func on_input(_event: InputEvent) -> void:
 	if played:
 		return
 	

@@ -9,7 +9,7 @@ class_name Tooltip
 @onready var toolipt_label: RichTextLabel = %Tooltip_label
 
 var tween: Tween
-
+var is_visible := false
 
 func _ready() -> void:
 	Events.card_tooltip_requested.connect(show_tooltip)
@@ -19,6 +19,7 @@ func _ready() -> void:
 
 
 func show_tooltip(icon:  Texture, text: String) -> void:
+	is_visible = true
 	if tween:
 		tween.kill()
 	
@@ -30,14 +31,15 @@ func show_tooltip(icon:  Texture, text: String) -> void:
 
 
 func hide_tooltip() -> void:
+	is_visible = false
 	if tween:
 		tween.kill()
 	
-	hide_animation()
+	get_tree().create_timer(fade_secs, false).timeout.connect(hide_animation)
 
 
 func hide_animation() -> void:
-	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_secs)
-	tween.tween_callback(hide)
-	
+	if not is_visible:
+		tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_secs)
+		tween.tween_callback(hide)
