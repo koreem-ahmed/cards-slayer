@@ -18,5 +18,5 @@ func is_performable() -> bool:
 	return false
 
 
-func preform_action() -> void:
+func perform_action() -> void:
 	pass
