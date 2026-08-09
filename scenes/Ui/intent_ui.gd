@@ -1,11 +1,19 @@
 extends HBoxContainer
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+class_name IntentUI
+
+@onready var icon: TextureRect = $Icon
+@onready var number: Label = $Number
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func update_intent(intent: Intent) -> void:
+	if not intent:
+		hide()
+		return
+	
+	icon.texture = intent.icon
+	icon.visible = icon.texture != null
+	number.text = intent.number
+	number.visible = intent.number.length() > 0
+	show()

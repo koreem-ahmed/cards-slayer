@@ -26,5 +26,5 @@ func perform_action() -> void:
 	
 	get_tree().create_timer(0.6, false).timeout.connect(
 		func():
-			Events.enemy_action_completed.emit()
+			Events.enemy_action_completed.emit(enemy)
 	)

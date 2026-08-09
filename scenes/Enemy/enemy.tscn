@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bop8kkawskegv" path="res://scenes/Enemy/enemy.gd" id="1_o5uld"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://assets/arrow.png" id="2_vamnb"]
 [ext_resource type="PackedScene" uid="uid://bdawf6x7jc3p" path="res://scenes/Ui/stats_ui.tscn" id="3_o5uld"]
+[ext_resource type="PackedScene" uid="uid://j5f613t2qfx8" path="res://scenes/Ui/intent_ui.tscn" id="5_grfqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3j6n"]
 
@@ -26,6 +27,10 @@ shape = SubResource("RectangleShape2D_i3j6n")
 [node name="StatsUI" parent="." unique_id=291604495 instance=ExtResource("3_o5uld")]
 offset_top = 7.0
 offset_bottom = 23.0
+
+[node name="IntentUI" parent="." unique_id=86363904 instance=ExtResource("5_grfqg")]
+offset_top = -25.0
+offset_bottom = -11.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
