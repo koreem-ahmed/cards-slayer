@@ -17,8 +17,8 @@ const HOVER_STYLEBOX := preload("res://assets/themes/card_hover_stylebox.tres")
 @onready var drop_detector: Area2D = $drop_detector
 @onready var card_state_machine: CardStateMachine = $card_state_machine as CardStateMachine
 @onready var targets: Array[Node] = []
-@onready var original_index := self.get_index()
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var playable := true : set = set_playable

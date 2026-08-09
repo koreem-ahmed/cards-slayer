@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://j5f613t2qfx8"]
+
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://assets/tile_0106.png" id="1_fdtmp"]
+
+[node name="IntentUI" type="HBoxContainer" unique_id=86363904]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 14.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="." unique_id=63889455]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_fdtmp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Number" type="Label" parent="." unique_id=2147130938]
+layout_mode = 2
+size_flags_vertical = 1
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
