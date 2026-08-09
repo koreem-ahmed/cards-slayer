@@ -4,6 +4,9 @@ extends Area2D
 class_name Enemy
 
 const ARROW_OFFSET := 5
+const WHITE_SPRITE_MATERIAL := preload("res://assets/themes/white_sprite_material.tres")
+
+
 
 @export var stats: EnemyStats : set = set_enemy_stats
 
@@ -84,17 +87,21 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 	
+	enemy_sprite.material = WHITE_SPRITE_MATERIAL
+	
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.5))
 	tween.tween_callback(stats.take_damage.bind(damage))
-	tween.tween_interval(0.2)
+	tween.tween_interval(0.17)
 	
 	tween.finished.connect(
 		func():
+			enemy_sprite.material = null
+			
 			if stats.health <= 0:
 				queue_free()
 	)
-
+#lkjfadskljlkj
 
 func _on_area_entered(_area: Area2D) -> void:
 	arrow.show()

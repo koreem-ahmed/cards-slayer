@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dlueh2bv8nvm2" path="res://scenes/Ui/mana_ui.tscn" id="11_ikqpk"]
 [ext_resource type="PackedScene" uid="uid://8rwbobhddv3c" path="res://scenes/Ui/tool_tip.tscn" id="12_f7rmk"]
 [ext_resource type="Theme" uid="uid://bfbsphhsjwiit" path="res://assets/themes/Main_theme.tres" id="13_8cp08"]
+[ext_resource type="Script" uid="uid://q8bf5pectr62" path="res://scenes/Ui/red_flash.gd" id="15_peapi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha178"]
 size = Vector2(256, 100)
@@ -94,4 +95,22 @@ grow_vertical = 0
 theme = ExtResource("13_8cp08")
 text = "End Turn"
 
+[node name="Red Flash" type="CanvasLayer" parent="." unique_id=471383664]
+layer = 2
+script = ExtResource("15_peapi")
+
+[node name="ColorRect" type="ColorRect" parent="Red Flash" unique_id=645743367]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.44313726, 0.44313726, 0)
+
+[node name="Timer" type="Timer" parent="Red Flash" unique_id=2069642752]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="child_order_changed" from="EnemyHandler" to="." method="_on_enemy_handler_child_order_changed"]
+[connection signal="timeout" from="Red Flash/Timer" to="Red Flash" method="_on_timer_timeout"]
