@@ -11,7 +11,7 @@ enum Type {CONDITIONAL, CHANCE_BASED}
 @export_range(0.0, 10.0) var chance_weight := 0.0
 
 @onready var accummulated_weight := 0.0
-#ff for being a jack or a reall gsd
+
 var enemy : Enemy
 var target : Node2D
 

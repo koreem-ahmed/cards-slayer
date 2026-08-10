@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://eydfdi6h7uwq"]
+
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://assets/tile_0084.png" id="1_7vlcy"]
+[ext_resource type="Script" uid="uid://eb25m8cbjcsv" path="res://scenes/Ui/main_menu.gd" id="1_nrfw7"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://assets/tile_0088.png" id="2_nrfw7"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="3_68tix"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://assets/tile_0110.png" id="4_h8mr8"]
+[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://assets/tile_0120.png" id="5_dfp3e"]
+[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://assets/tile_0108.png" id="6_k15yg"]
+
+[sub_resource type="Gradient" id="Gradient_366un"]
+offsets = PackedFloat32Array(0.006147541, 1)
+colors = PackedColorArray(0.28327557, 0.13166085, 9.62615e-08, 1, 0.14584774, 0.021681929, 9.024516e-09, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nt0y2"]
+gradient = SubResource("Gradient_366un")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_djw83"]
+font_size = 13
+shadow_size = 4
+shadow_color = Color(0.56427056, 0.3634726, 0.217381, 0.75686276)
+
+[node name="Main Menu" type="Control" unique_id=721972043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrfw7")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1577286101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nt0y2")
+
+[node name="Label" type="Label" parent="." unique_id=1399714242]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -56.0
+offset_right = 102.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "My 	roguelike Deckbuilder"
+label_settings = SubResource("LabelSettings_djw83")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2130231381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 30.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Continue btn" type="Button" parent="VBoxContainer" unique_id=1473653197]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Continue"
+
+[node name="New run btn" type="Button" parent="VBoxContainer" unique_id=570223225]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "New Run"
+
+[node name="Exit btn" type="Button" parent="VBoxContainer" unique_id=1501078377]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Exit"
+
+[node name="Wizard" type="Sprite2D" parent="." unique_id=2027111655]
+position = Vector2(20, 110)
+scale = Vector2(2, 2)
+texture = ExtResource("1_7vlcy")
+
+[node name="Assassin" type="Sprite2D" parent="." unique_id=522579285]
+position = Vector2(51, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nrfw7")
+
+[node name="Warrior" type="Sprite2D" parent="." unique_id=1585667053]
+position = Vector2(42, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("3_68tix")
+
+[node name="Crab" type="Sprite2D" parent="." unique_id=1166522159]
+position = Vector2(205, 110)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h8mr8")
+flip_h = true
+
+[node name="Bat" type="Sprite2D" parent="." unique_id=1006514865]
+position = Vector2(236, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("5_dfp3e")
+flip_h = true
+
+[node name="ghost" type="Sprite2D" parent="." unique_id=1195065024]
+position = Vector2(227, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("6_k15yg")
+flip_h = true
+
+[connection signal="pressed" from="VBoxContainer/Continue btn" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/New run btn" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit btn" to="." method="_on_exit_pressed"]

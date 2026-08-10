@@ -12,7 +12,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://assets/themes/white_sprite_materia
 
 @onready var enemy_sprite: Sprite2D = $"enemy sprite"
 @onready var arrow: Sprite2D = $arrow
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
+@onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
 
 var enemy_action_picker: EnemyActionPicker
@@ -101,7 +101,6 @@ func take_damage(damage: int) -> void:
 			if stats.health <= 0:
 				queue_free()
 	)
-#lkjfadskljlkj
 
 func _on_area_entered(_area: Area2D) -> void:
 	arrow.show()

@@ -5,8 +5,8 @@ class_name BattleUI
 
 @export var char_stats: CharacterStats : set = set_char_stats
 
-@onready var hand: Hand = $Hand as Hand
-@onready var mana_ui: ManaUI = $ManaUI as ManaUI
+@onready var hand: Hand = $Hand
+@onready var mana_ui: ManaUI = $ManaUI
 @onready var end_turn_btn: Button = %"End Turn btn"
 
 

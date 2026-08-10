@@ -6,7 +6,7 @@ class_name  Player
 @export var stats: CharacterStats : set = set_character_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
+@onready var stats_ui: StatsUI = $StatsUI
 
 
 func set_character_stats(value: CharacterStats) -> void:
@@ -43,8 +43,9 @@ func take_damage(damage: int) -> void:
 	tween.finished.connect(
 		func():
 			if stats.health <= 0:
-				Events.player_died.emit()
-				queue_free()
+				if is_instance_valid(Player):
+					Events.player_died.emit()
+					queue_free()
 	)
 	
 	

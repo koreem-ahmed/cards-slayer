@@ -15,7 +15,7 @@ const HOVER_STYLEBOX := preload("res://assets/themes/card_hover_stylebox.tres")
 @onready var cost: Label = $Cost
 @onready var icon: TextureRect = $Icon
 @onready var drop_detector: Area2D = $drop_detector
-@onready var card_state_machine: CardStateMachine = $card_state_machine as CardStateMachine
+@onready var card_state_machine: CardStateMachine = $card_state_machine
 @onready var targets: Array[Node] = []
 
 var original_index := 0
