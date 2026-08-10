@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://btgqmsjinreoj"]
+
+[ext_resource type="Script" uid="uid://cymbksucpixap" path="res://scenes/Ui/battle_over_panel.gd" id="1_abgos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my67x"]
+bg_color = Color(0, 0, 0, 0.34901962)
+
+[sub_resource type="LabelSettings" id="LabelSettings_abgos"]
+font_size = 24
+
+[node name="Battle Over Panel" type="Panel" unique_id=2071288510]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_my67x")
+script = ExtResource("1_abgos")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1885814356]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2075685356]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Victorious"
+label_settings = SubResource("LabelSettings_abgos")
+
+[node name="Continue btn" type="Button" parent="VBoxContainer" unique_id=1059163298]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Awsome"
+
+[node name="Restart btn" type="Button" parent="VBoxContainer" unique_id=1339871454]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[connection signal="pressed" from="VBoxContainer/Continue btn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart btn" to="." method="_on_restart_btn_pressed"]

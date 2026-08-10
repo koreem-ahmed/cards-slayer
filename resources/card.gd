@@ -14,8 +14,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMY, EVERYONE}
 @export_group("Card Visuals")
 @export var icon: Texture
 @export_multiline var tool_tip_text: String
-
-
+@export var sound: AudioStream
 
 
 func is_single_targeted() -> bool:
@@ -51,3 +50,4 @@ func play(targets: Array[Node], char_stats: CharacterStats) -> void:
 
 func apply_effects(_targets: Array[Node]) -> void:
 	pass
+	

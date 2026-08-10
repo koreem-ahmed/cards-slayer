@@ -15,10 +15,16 @@ run/main_scene="uid://2twojcaq2v40"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://btpnwcktd5mra"
 
+[audio]
+
+buses/default_bus_layout="uid://dyjvll76jlbvr"
+
 [autoload]
 
 Events="*uid://dt4rte0seyd18"
 Shaker="*uid://dkoo6yif75pa1"
+MusicPlayer="*uid://7h8dc06qepxg"
+SFXPlayer="*uid://da1j5qys0ugqj"
 
 [display]
 

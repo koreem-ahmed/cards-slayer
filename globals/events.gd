@@ -13,9 +13,12 @@ signal tooltip_hide_requested
 signal player_hand_draw
 signal player_hand_discarded 
 signal player_turn_ended
-signal player_died
 signal player_hit
+signal player_died
 
 # enemy signals
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended
+
+# battle signals
+signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
