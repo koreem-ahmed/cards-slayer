@@ -3,7 +3,7 @@ extends CenterContainer
 
 class_name CardMenuUi
 
-signal tooltipp_requested(card: Card)
+signal tooltip_requested(card: Card)
 
 const BASE_STYLEBOX = preload("res://assets/themes/card_base_stylebox.tres")
 const HOVER_STYLEBOX = preload("res://assets/themes/card_hover_stylebox.tres")
@@ -17,7 +17,7 @@ const HOVER_STYLEBOX = preload("res://assets/themes/card_hover_stylebox.tres")
 
 func _on_visuals_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
-		tooltipp_requested.emit(card)
+		tooltip_requested.emit(card)
 
 
 func _on_visuals_mouse_entered() -> void:
