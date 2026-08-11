@@ -13,6 +13,9 @@ const TREASURE_SCENE := preload("res://scenes/Treasure/treasure.tscn")
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $"Current view"
+@onready var deck_button: CardPileOpener = %"Deck Button"
+@onready var deck_view: CardPileView = %"Deck View"
+
 @onready var map_btn: Button = %"Map btn"
 @onready var battle_btn: Button = %"battle btn"
 @onready var shop_btn: Button = %"shop btn"
@@ -33,10 +36,12 @@ func _ready() -> void:
 			start_run()
 		RunStartup.Type.CONTINUED_RUN:
 			print("TODO: loade previous run")
+	
 
 
 func start_run() -> void:
 	setup_event_connections()
+	setup_top_bar()
 	print("TODO: generate map")
 	
 
@@ -63,6 +68,13 @@ func setup_event_connections() -> void:
 	rewards_btn.pressed.connect(change_view.bind(BATTLE_REWARDS_SCENE))
 	shop_btn.pressed.connect(change_view.bind(SHOP_SCENE))
 	treature_btn.pressed.connect(change_view.bind(TREASURE_SCENE))
+
+
+func setup_top_bar():
+	deck_button.card_pile = character.deck
+	deck_view.card_pile = character.deck
+	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
+	
 
 
 func on_map_exited() -> void:

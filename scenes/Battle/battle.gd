@@ -20,7 +20,7 @@ func _ready() -> void:
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(on_player_died)
 	start_battle(new_stats)
-
+	battle_ui.initialize_card_pile_ui()
 
 func start_battle(stats: CharacterStats) -> void:
 	get_tree().paused = false

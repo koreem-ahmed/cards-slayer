@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="RunStartup" format=3 uid="uid://xj7jct72x5bx"]
 
 [ext_resource type="Script" uid="uid://d0a1hy10q1r46" path="res://resources/run_startup.gd" id="1_cl7mq"]
+[ext_resource type="Resource" uid="uid://bq3wx76da57kj" path="res://characters/warrior/warrior.tres" id="1_orc17"]
 
 [resource]
 script = ExtResource("1_cl7mq")
+picked_char = ExtResource("1_orc17")
 metadata/_custom_type_script = "uid://d0a1hy10q1r46"

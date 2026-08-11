@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2bq4q81cxky7"]
 
 [ext_resource type="Texture2D" uid="uid://bm1v5nr43lver" path="res://assets/draw.png" id="1_8a6yi"]
+[ext_resource type="Script" uid="uid://fpcbewdrquo4" path="res://scenes/Ui/card_pile_opener.gd" id="2_57td3"]
 
 [node name="Card Pile Opener" type="TextureButton" unique_id=708151757]
 custom_minimum_size = Vector2(16, 16)
@@ -9,3 +10,4 @@ offset_bottom = 16.0
 texture_normal = ExtResource("1_8a6yi")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("2_57td3")
