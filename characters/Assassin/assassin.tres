@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://dtyu536wxp5l8"]
+
+[ext_resource type="Script" uid="uid://qvbqe5cy1sgr" path="res://resources/character_stats.gd" id="1_g0uh6"]
+[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://assets/tile_0088.png" id="1_ydltv"]
+[ext_resource type="Resource" uid="uid://dqtcgxnd6wmf6" path="res://characters/warrior/worrior_starting_deck.tres" id="3_0ilhd"]
+
+[resource]
+script = ExtResource("1_g0uh6")
+char_name = "Assassin"
+description = "Always behind your back and in your shadows, So be carful."
+photo = ExtResource("1_ydltv")
+starting_deck = ExtResource("3_0ilhd")
+cards_per_turn = 5
+max_mana = 3
+max_health = 24
+art = ExtResource("1_ydltv")
+metadata/_custom_type_script = "uid://qvbqe5cy1sgr"

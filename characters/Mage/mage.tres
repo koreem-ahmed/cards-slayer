@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://blgvep8lm0vk2"]
+
+[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://assets/tile_0084.png" id="1_aw8w7"]
+[ext_resource type="Script" uid="uid://qvbqe5cy1sgr" path="res://resources/character_stats.gd" id="1_o28s3"]
+[ext_resource type="Resource" uid="uid://dqtcgxnd6wmf6" path="res://characters/warrior/worrior_starting_deck.tres" id="3_2tov5"]
+
+[resource]
+script = ExtResource("1_o28s3")
+char_name = "Mage"
+description = "Years of wisdom and 
+recurring back pain."
+photo = ExtResource("1_aw8w7")
+starting_deck = ExtResource("3_2tov5")
+cards_per_turn = 3
+max_mana = 4
+max_health = 27
+art = ExtResource("1_aw8w7")
+metadata/_custom_type_script = "uid://qvbqe5cy1sgr"

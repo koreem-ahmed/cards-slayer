@@ -3,6 +3,12 @@ extends Stats
 
 class_name CharacterStats
 
+@export_group("Visuals")
+@export var char_name: String
+@export_multiline var description: String
+@export var photo: Texture
+
+@export_group("Gameplay Data")
 @export var starting_deck: CardPile
 @export var cards_per_turn: int
 @export var max_mana: int

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://df0l5gocy7ubd"]
 
-[ext_resource type="Script" uid="uid://eb25m8cbjcsv" path="res://scenes/Ui/main_menu.gd" id="1_o0pjv"]
-[ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://assets/tile_0084.png" id="2_uiw2f"]
-[ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://assets/tile_0088.png" id="3_g2u4j"]
-[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="4_nhsl2"]
-[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://assets/tile_0110.png" id="5_t2ff1"]
-[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://assets/tile_0120.png" id="6_ctwdy"]
-[ext_resource type="Texture2D" uid="uid://c24y6l0ivlqp7" path="res://assets/tile_0108.png" id="7_ft4ix"]
+[ext_resource type="Script" uid="uid://b01g0oydcxywq" path="res://scenes/Ui/char_selector.gd" id="1_4yp32"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="2_xwq8t"]
+[ext_resource type="ButtonGroup" uid="uid://v860nuurwx0m" path="res://assets/themes/char_select_btn_group.tres" id="3_p12q4"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://assets/tile_0118.png" id="4_o0pjv"]
+[ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://assets/tile_0130.png" id="5_uiw2f"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://assets/tile_0103.png" id="6_g2u4j"]
 
 [sub_resource type="Gradient" id="Gradient_366un"]
 offsets = PackedFloat32Array(0.006147541, 1)
@@ -17,18 +16,23 @@ gradient = SubResource("Gradient_366un")
 width = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_djw83"]
-font_size = 13
 shadow_size = 4
 shadow_color = Color(0.56427056, 0.3634726, 0.217381, 0.75686276)
 
-[node name="Main Menu" type="Control" unique_id=721972043]
+[sub_resource type="LabelSettings" id="LabelSettings_40wab"]
+line_spacing = 6.0
+font_size = 12
+shadow_size = 4
+shadow_color = Color(0.56427056, 0.3634726, 0.217381, 0.75686276)
+
+[node name="char selector" type="Control" unique_id=721972043]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o0pjv")
+script = ExtResource("1_4yp32")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1577286101]
 layout_mode = 1
@@ -39,88 +43,146 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_nt0y2")
 
-[node name="Label" type="Label" parent="." unique_id=1399714242]
+[node name="Char Text" type="VBoxContainer" parent="." unique_id=261884407]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -56.0
-offset_right = 102.0
-offset_bottom = -42.0
+offset_left = -118.5
+offset_top = 10.0
+offset_right = 118.5
+offset_bottom = 68.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "My 	roguelike Deckbuilder"
+
+[node name="Title" type="Label" parent="Char Text" unique_id=1399714242]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Warrior"
 label_settings = SubResource("LabelSettings_djw83")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2130231381]
+[node name="Description" type="Label" parent="Char Text" unique_id=1981220248]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "WarriorALikejklfjdsaklf
+lkjfdaslkjfjfjfjfjfjj"
+label_settings = SubResource("LabelSettings_40wab")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Char photo" type="TextureRect" parent="." unique_id=2029403884]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -72.0
+offset_right = 69.0
+offset_bottom = -12.0
+grow_vertical = 0
+texture = ExtResource("2_xwq8t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Start btn" type="Button" parent="." unique_id=575486517]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -24.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Strat"
+
+[node name="Char btns" type="HBoxContainer" parent="." unique_id=1451214619]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 78.0
+offset_right = 215.0
+offset_bottom = 108.0
+theme_override_constants/separation = 15
+
+[node name="Warrior btn" type="Button" parent="Char btns" unique_id=1997236961]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("3_p12q4")
+
+[node name="icon" type="TextureRect" parent="Char btns/Warrior btn" unique_id=2017021334]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -18.0
-offset_right = 30.0
-offset_bottom = 40.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+texture = ExtResource("4_o0pjv")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Continue btn" type="Button" parent="VBoxContainer" unique_id=1473653197]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 14)
+[node name="Mage btn" type="Button" parent="Char btns" unique_id=259867626]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-text = "Continue"
+toggle_mode = true
+button_group = ExtResource("3_p12q4")
 
-[node name="New run btn" type="Button" parent="VBoxContainer" unique_id=570223225]
-custom_minimum_size = Vector2(0, 14)
+[node name="icon" type="TextureRect" parent="Char btns/Mage btn" unique_id=2036236958]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uiw2f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Assassin btn" type="Button" parent="Char btns" unique_id=1393747152]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-text = "New Run"
+toggle_mode = true
+button_group = ExtResource("3_p12q4")
 
-[node name="Exit btn" type="Button" parent="VBoxContainer" unique_id=1501078377]
-custom_minimum_size = Vector2(0, 14)
-layout_mode = 2
-text = "Exit"
+[node name="icon" type="TextureRect" parent="Char btns/Assassin btn" unique_id=214418744]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_g2u4j")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Wizard" type="Sprite2D" parent="." unique_id=2027111655]
-position = Vector2(20, 110)
-scale = Vector2(2, 2)
-texture = ExtResource("2_uiw2f")
-
-[node name="Assassin" type="Sprite2D" parent="." unique_id=522579285]
-position = Vector2(51, 104)
-scale = Vector2(2, 2)
-texture = ExtResource("3_g2u4j")
-
-[node name="Warrior" type="Sprite2D" parent="." unique_id=1585667053]
-position = Vector2(42, 122)
-scale = Vector2(2, 2)
-texture = ExtResource("4_nhsl2")
-
-[node name="Crab" type="Sprite2D" parent="." unique_id=1166522159]
-position = Vector2(205, 110)
-scale = Vector2(2, 2)
-texture = ExtResource("5_t2ff1")
-flip_h = true
-
-[node name="Bat" type="Sprite2D" parent="." unique_id=1006514865]
-position = Vector2(236, 104)
-scale = Vector2(2, 2)
-texture = ExtResource("6_ctwdy")
-flip_h = true
-
-[node name="ghost" type="Sprite2D" parent="." unique_id=1195065024]
-position = Vector2(227, 122)
-scale = Vector2(2, 2)
-texture = ExtResource("7_ft4ix")
-flip_h = true
-
-[connection signal="pressed" from="VBoxContainer/Continue btn" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/New run btn" to="." method="_on_new_run_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit btn" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Start btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="Char btns/Warrior btn" to="." method="_on_warrior_btn_pressed"]
+[connection signal="pressed" from="Char btns/Mage btn" to="." method="_on_mage_btn_pressed"]
+[connection signal="pressed" from="Char btns/Assassin btn" to="." method="_on_assassin_btn_pressed"]

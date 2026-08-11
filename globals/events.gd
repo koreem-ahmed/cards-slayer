@@ -22,3 +22,19 @@ signal enemy_turn_ended
 
 # battle signals
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
+signal battle_won
+
+# map signals
+signal map_exited
+
+# shop signals
+signal shop_exited
+
+# campfire signals
+signal campfire_exited
+
+# battle reward signals
+signal battle_reward_exited
+
+# treasure room signals
+signal treasure_room_exited
