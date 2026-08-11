@@ -19,7 +19,6 @@ func _ready() -> void:
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(on_player_died)
-	
 	start_battle(new_stats)
 
 

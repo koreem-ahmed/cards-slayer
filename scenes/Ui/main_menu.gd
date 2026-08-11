@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_continue_pressed() -> void:
-	pass
+	print("TODO: load a saved file for the game")
 
 
 func _on_new_run_pressed() -> void:

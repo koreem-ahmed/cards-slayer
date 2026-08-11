@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://7mk77ltjd3te"]
+
+[ext_resource type="PackedScene" uid="uid://dk21itmkswqvv" path="res://scenes/Ui/card_menu_ui.tscn" id="1_f2pkk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_khhcp"]
+font_size = 12
+
+[node name="Card Pile View" type="Control" unique_id=765901302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=2048750064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6039216)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1372938748]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1142979145]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2026261150]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discard pile"
+label_settings = SubResource("LabelSettings_khhcp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1596382005]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="Cards" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1536208277]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="Card_Menu_Ui" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1812692317 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui2" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1384329752 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui3" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1366044163 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui4" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1450237732 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui5" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=569426940 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui6" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=2014931716 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui7" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=622084810 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui8" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=189930986 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui9" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1705527081 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui10" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=606157004 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui11" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=159737991 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui12" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=959133447 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui13" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=562279623 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui14" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1460452220 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui15" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1123907728 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui16" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=2134300937 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui17" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1849744166 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui18" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=199378247 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui19" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=550033084 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui20" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=90046529 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui21" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1531908261 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui22" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1712505364 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui23" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=2078491718 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Card_Menu_Ui24" parent="MarginContainer/VBoxContainer/ScrollContainer/Cards" unique_id=1322325869 instance=ExtResource("1_f2pkk")]
+layout_mode = 2
+
+[node name="Back btn" type="Button" parent="." unique_id=2086060537]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 19.0
+grow_horizontal = 0
+text = "Back"
