@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dkgh6rxaleoar"]
 
+[ext_resource type="Script" uid="uid://b12bgivyrhap3" path="res://scenes/Map/map.gd" id="1_4rr3d"]
+
 [node name="Map" type="Control" unique_id=1442872731]
 layout_mode = 3
 anchors_preset = 15
@@ -8,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_4rr3d")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1785835429]
 layout_mode = 1
@@ -43,3 +46,5 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 13)
 layout_mode = 2
 text = "Go Back"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

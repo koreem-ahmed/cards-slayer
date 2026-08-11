@@ -1,3 +1,48 @@
 [gd_scene format=3 uid="uid://dpekgnxmi2vp4"]
 
+[ext_resource type="Script" uid="uid://cgfin7lombfxr" path="res://scenes/Run/run.gd" id="1_biywv"]
+[ext_resource type="PackedScene" uid="uid://dkgh6rxaleoar" path="res://scenes/Map/map.tscn" id="2_4m5yt"]
+[ext_resource type="Resource" uid="uid://xj7jct72x5bx" path="res://scenes/Run/run_startup.tres" id="2_rxkvi"]
+
 [node name="Run" type="Node" unique_id=656536783]
+script = ExtResource("1_biywv")
+run_startup = ExtResource("2_rxkvi")
+
+[node name="Map" parent="." unique_id=1442872731 instance=ExtResource("2_4m5yt")]
+
+[node name="Current view" type="Node" parent="." unique_id=18536698]
+
+[node name="Bebug buttons" type="VBoxContainer" parent="." unique_id=1444269304]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Map btn" type="Button" parent="Bebug buttons" unique_id=469691018]
+unique_name_in_owner = true
+layout_mode = 2
+text = "map"
+
+[node name="battle btn" type="Button" parent="Bebug buttons" unique_id=486948956]
+unique_name_in_owner = true
+layout_mode = 2
+text = "battle"
+
+[node name="shop btn" type="Button" parent="Bebug buttons" unique_id=1373807606]
+unique_name_in_owner = true
+layout_mode = 2
+text = "shop"
+
+[node name="treature btn" type="Button" parent="Bebug buttons" unique_id=232085490]
+unique_name_in_owner = true
+layout_mode = 2
+text = "treature"
+
+[node name="rewards btn" type="Button" parent="Bebug buttons" unique_id=96848605]
+unique_name_in_owner = true
+layout_mode = 2
+text = "rewards"
+
+[node name="campfire btn" type="Button" parent="Bebug buttons" unique_id=2101967610]
+unique_name_in_owner = true
+layout_mode = 2
+text = "campfire"

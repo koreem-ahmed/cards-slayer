@@ -1,8 +1,11 @@
 extends Control
 
+const RUN_SCENE = preload("res://scenes/Run/run.tscn")
 const ASSASSIN_STATS = preload("res://characters/Assassin/assassin.tres")
 const MAGE_STATS = preload("res://characters/Mage/mage.tres")
 const WARRIOR_STATS = preload("res://characters/warrior/warrior.tres")
+
+@export var run_startup: RunStartup
 
 @onready var title: Label = %Title
 @onready var description: Label = %Description
@@ -25,7 +28,9 @@ func set_current_char(new_char: CharacterStats) -> void:
 
 
 func _on_start_btn_pressed() -> void:
-	pass
+	run_startup.type = RunStartup.Type.NEW_RUN
+	run_startup.picked_char = current_char
+	get_tree().change_scene_to_packed(RUN_SCENE)
 
 
 func _on_warrior_btn_pressed() -> void:

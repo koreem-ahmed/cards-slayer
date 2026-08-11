@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df0l5gocy7ubd"]
 
 [ext_resource type="Script" uid="uid://b01g0oydcxywq" path="res://scenes/Ui/char_selector.gd" id="1_4yp32"]
+[ext_resource type="Resource" uid="uid://xj7jct72x5bx" path="res://scenes/Run/run_startup.tres" id="2_o0pjv"]
 [ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="2_xwq8t"]
 [ext_resource type="ButtonGroup" uid="uid://v860nuurwx0m" path="res://assets/themes/char_select_btn_group.tres" id="3_p12q4"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://assets/tile_0118.png" id="4_o0pjv"]
@@ -33,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4yp32")
+run_startup = ExtResource("2_o0pjv")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1577286101]
 layout_mode = 1

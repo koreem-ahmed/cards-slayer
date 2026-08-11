@@ -1,5 +1,5 @@
 extends Control
 
 
-func _on_back_btn_pressed() -> void:
+func _on_button_pressed() -> void:
 	Events.map_exited.emit()

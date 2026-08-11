@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://soxr47h1h5nw" path="res://scenes/Campfire/campfire.gd" id="1_w5x8h"]
 
-[node name="Campfire" type="Control" unique_id=1442872731]
+[node name="Treasure" type="Control" unique_id=1442872731]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=501648558]
 layout_mode = 2
-text = "Campfire"
+text = "Treasure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
