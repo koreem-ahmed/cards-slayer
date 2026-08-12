@@ -9,7 +9,7 @@ class_name ManaUI
 
 func _ready() -> void:
 	await get_tree().create_timer(2).timeout
-	char_stats.mana = 2
+	char_stats.mana = 3
 
 func set_char_stats(value: CharacterStats) -> void:
 	char_stats = value

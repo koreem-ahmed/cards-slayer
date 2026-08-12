@@ -9,7 +9,7 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 	
-	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLEBOX)
+	card_ui.card_visuals.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLEBOX)
 	Events.card_drag_starts.emit(card_ui)
 	
 	min_time_elapaed = false

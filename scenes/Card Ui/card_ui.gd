@@ -11,9 +11,7 @@ const HOVER_STYLEBOX := preload("res://assets/themes/card_hover_stylebox.tres")
 @export var card: Card : set = set_card
 @export var char_stats: CharacterStats : set = set_char_stats
 
-@onready var panel: Panel = $Panel
-@onready var cost: Label = $Cost
-@onready var icon: TextureRect = $Icon
+@onready var card_visuals: CardVisuals = $"Card Visuals"
 @onready var drop_detector: Area2D = $drop_detector
 @onready var card_state_machine: CardStateMachine = $card_state_machine
 @onready var targets: Array[Node] = []
@@ -67,8 +65,7 @@ func set_card(value: Card) -> void:
 		await ready
 	
 	card = value
-	cost.text = str(card.cost)
-	icon.texture = card.icon
+	card_visuals.card = card
 
 
 func set_char_stats(value: CharacterStats) -> void:
@@ -79,11 +76,11 @@ func set_char_stats(value: CharacterStats) -> void:
 func set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
-		cost.add_theme_color_override("font_color", Color.RED)
-		icon.modulate = Color(1, 1, 1, 0.5)
+		card_visuals.cost.add_theme_color_override("font_color", Color.RED)
+		card_visuals.icon.modulate = Color(1, 1, 1, 0.5)
 	else:
-		cost.remove_theme_color_override("font_color")
-		icon.modulate = Color(1, 1, 1, 1)
+		card_visuals.cost.remove_theme_color_override("font_color")
+		card_visuals.icon.modulate = Color(1, 1, 1, 1)
 
 
 func _on_drop_detector_area_entered(area: Area2D) -> void:

@@ -5,8 +5,10 @@
 [ext_resource type="Resource" uid="uid://bwcxhucrhqna2" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="2_smjn2"]
 [ext_resource type="Resource" uid="uid://bebfoym47ir3u" path="res://characters/warrior/cards/warrior_slash.tres" id="3_spcbl"]
 [ext_resource type="Resource" uid="uid://c6u2h133myj0l" path="res://characters/warrior/cards/warrior_block.tres" id="3_tynj1"]
+[ext_resource type="Resource" uid="uid://j07s8c70y150" path="res://characters/warrior/cards/warrior_true_strength.tres" id="5_t6vmm"]
+[ext_resource type="Resource" uid="uid://bbl306n2brhgg" path="res://characters/warrior/cards/warrior_big_slam.tres" id="6_bp1x3"]
 
 [resource]
 script = ExtResource("2_fn46i")
-cards = Array[ExtResource("1_xiujj")]([ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("3_spcbl"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_spcbl")])
+cards = Array[ExtResource("1_xiujj")]([ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("2_smjn2"), ExtResource("3_spcbl"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_tynj1"), ExtResource("3_spcbl"), ExtResource("6_bp1x3"), ExtResource("5_t6vmm")])
 metadata/_custom_type_script = "uid://s5feagbbf603"

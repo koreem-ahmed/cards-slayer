@@ -22,6 +22,7 @@ func _ready() -> void:
 	start_battle(new_stats)
 	battle_ui.initialize_card_pile_ui()
 
+
 func start_battle(stats: CharacterStats) -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
