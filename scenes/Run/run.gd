@@ -13,6 +13,7 @@ const TREASURE_SCENE := preload("res://scenes/Treasure/treasure.tscn")
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $"Current view"
+@onready var gold_ui: GoldUI = %"Gold UI"
 @onready var deck_button: CardPileOpener = %"Deck Button"
 @onready var deck_view: CardPileView = %"Deck View"
 
@@ -23,6 +24,7 @@ const TREASURE_SCENE := preload("res://scenes/Treasure/treasure.tscn")
 @onready var rewards_btn: Button = %"rewards btn"
 @onready var campfire_btn: Button = %"campfire btn"
 
+var stats: RunStats
 var character: CharacterStats
 
 
@@ -40,10 +42,12 @@ func _ready() -> void:
 
 
 func start_run() -> void:
+	stats = RunStats.new()
+	
 	setup_event_connections()
 	setup_top_bar()
 	print("TODO: generate map")
-	
+
 
 func change_view(scene: PackedScene) -> void:
 	if current_view.get_child_count() > 0:
@@ -71,6 +75,7 @@ func setup_event_connections() -> void:
 
 
 func setup_top_bar():
+	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))

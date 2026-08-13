@@ -53,4 +53,3 @@ func _on_state_transition(from: CardState, to: CardState.State) -> void:
 	current_state = new_state
 	
 	
-	

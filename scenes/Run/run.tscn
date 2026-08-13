@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cgfin7lombfxr" path="res://scenes/Run/run.gd" id="1_biywv"]
 [ext_resource type="PackedScene" uid="uid://dkgh6rxaleoar" path="res://scenes/Map/map.tscn" id="2_4m5yt"]
 [ext_resource type="Resource" uid="uid://xj7jct72x5bx" path="res://scenes/Run/run_startup.tres" id="2_rxkvi"]
+[ext_resource type="PackedScene" uid="uid://c6fmxlj0mu751" path="res://scenes/Ui/gold_ui.tscn" id="4_68kdb"]
 [ext_resource type="PackedScene" uid="uid://c2bq4q81cxky7" path="res://scenes/Ui/card_pile_opener.tscn" id="4_w4jsb"]
 [ext_resource type="Texture2D" uid="uid://dmio87p8rl6n7" path="res://assets/deck.png" id="5_68kdb"]
 [ext_resource type="PackedScene" uid="uid://7mk77ltjd3te" path="res://scenes/Ui/card_pile_view.tscn" id="6_psd1i"]
@@ -66,6 +67,10 @@ custom_minimum_size = Vector2(0, 18)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+
+[node name="Gold UI" parent="Top Bar/Bar Items" unique_id=1259324775 instance=ExtResource("4_68kdb")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Placeholder" type="Control" parent="Top Bar/Bar Items" unique_id=378229097]
 layout_mode = 2

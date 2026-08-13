@@ -3,13 +3,14 @@ extends Resource
 class_name Card
 
 enum Type {ATTACK, SKILL, POWER}
-enum Rarity {COMMON, UNCOMMON, RARE}
+enum Rarity {COMMON, UNCOMMON, RARE, LEGENDARY}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMY, EVERYONE}
 
 const RARITY_COLORS := {
 	Card.Rarity.COMMON: Color.GRAY,
 	Card.Rarity.UNCOMMON: Color.CORNFLOWER_BLUE,
 	Card.Rarity.RARE: Color.RED,
+	Card.Rarity.LEGENDARY: Color.GOLD 
 }
 
 @export_group("Card Attributes")

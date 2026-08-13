@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Card" format=3 uid="uid://j07s8c70y150"]
+[gd_resource type="Resource" format=3 uid="uid://j07s8c70y150"]
 
-[ext_resource type="Script" uid="uid://di45v77tnde72" path="res://resources/card.gd" id="1_100s8"]
 [ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://assets/tile_0127.png" id="1_rnlwg"]
+[ext_resource type="Script" uid="uid://cg38ljjpj28dq" path="res://characters/warrior/cards/warrior_true_strength.gd" id="2_rnlwg"]
 [ext_resource type="AudioStream" uid="uid://bepxbrithpxnf" path="res://assets/sounds/true_strength.ogg" id="3_ehbwc"]
 
 [resource]
-script = ExtResource("1_100s8")
+script = ExtResource("2_rnlwg")
 id = "warrior_true_strength"
 type = 2
 rarity = 2
