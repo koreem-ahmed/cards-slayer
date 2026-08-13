@@ -38,6 +38,7 @@ func take_damage(damage: int) -> void:
 	if intial_health > health:
 		Events.player_hit.emit()
 
+
 func create_instance() -> Resource:
 	var instance: CharacterStats = self.duplicate()
 	instance.health = max_health
@@ -47,3 +48,5 @@ func create_instance() -> Resource:
 	instance.draw_pile = CardPile.new()
 	instance.discard = CardPile.new()
 	return instance
+
+#ffffffffffads
