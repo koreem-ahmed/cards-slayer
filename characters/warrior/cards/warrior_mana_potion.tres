@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://d3mwbkycn18lr"]
+
+[ext_resource type="Script" uid="uid://di45v77tnde72" path="res://resources/card.gd" id="1_i4cpc"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://assets/tile_0116.png" id="1_rma2a"]
+[ext_resource type="AudioStream" uid="uid://cau0nuvfk3xau" path="res://assets/sounds/bottle_sound.mp3" id="3_5vyls"]
+
+[resource]
+script = ExtResource("1_i4cpc")
+id = "warrior_mana_potion"
+type = 2
+rarity = 1
+cost = 1
+icon = ExtResource("1_rma2a")
+tool_tip_text = "[center]Gain [color=\"0044ff\"]2[/color] mana points.[/center]"
+sound = ExtResource("3_5vyls")
+metadata/_custom_type_script = "uid://di45v77tnde72"

@@ -5,6 +5,9 @@ class_name CardTipPopup
 
 const CARD_MENU_UI_SCENE = preload("res://scenes/Ui/card_menu_ui.tscn")
 
+@export var background_color: Color = Color("000000b0")
+
+@onready var background: ColorRect = $Background
 @onready var tool_tip_card: CenterContainer = %"Tool tip Card"
 @onready var card_description: RichTextLabel = %"Card Description"
 
@@ -13,6 +16,7 @@ func _ready() -> void:
 	for card: CardMenuUi in tool_tip_card.get_children():
 		card.queue_free()
 	
+	background.color = background_color
 
 
 func show_tooltip(card: Card) -> void:

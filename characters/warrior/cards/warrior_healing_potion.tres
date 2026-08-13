@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://w3f3x7gs0a8h"]
+
+[ext_resource type="Texture2D" uid="uid://boklhiqs1414d" path="res://assets/tile_0115.png" id="1_2p772"]
+[ext_resource type="Script" uid="uid://di45v77tnde72" path="res://resources/card.gd" id="2_dsove"]
+[ext_resource type="AudioStream" uid="uid://c2melbalfevgg" path="res://assets/sounds/healing_sound.mp3" id="3_deou7"]
+
+[resource]
+script = ExtResource("2_dsove")
+id = "warrior_heal"
+type = 2
+rarity = 1
+cost = 2
+icon = ExtResource("1_2p772")
+tool_tip_text = "[center]Heal [color=\"0044ff\"]4[/color] hearts.[/center]"
+sound = ExtResource("3_deou7")
+metadata/_custom_type_script = "uid://di45v77tnde72"
