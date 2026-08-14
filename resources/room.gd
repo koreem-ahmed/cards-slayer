@@ -9,7 +9,7 @@ enum Type {NOT_ASSIGNED, MONSTER, TREASURE, CAMPFIRE, SHOP, BOSS}
 @export var row: int
 @export var column: int
 @export var position: Vector2
-@export var next_room: Array[Room]
+@export var next_rooms: Array[Room]
 @export var selected := false
 
 
