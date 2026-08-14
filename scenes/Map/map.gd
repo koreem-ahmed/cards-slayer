@@ -17,13 +17,10 @@ var map_data: Array[Array]
 var floors_climbed: int
 var last_room: Room
 var camera_edge_y: float
-
+var selection_locked := false
 
 func _ready() -> void:
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1)
-	
-	generate_new_map()
-	unlock_floor(0)
 	
 
 
@@ -45,7 +42,8 @@ func generate_new_map() -> void:
 func create_map_visuals() -> void:
 	for current_floor: Array in map_data:
 		for room: Room in current_floor:
-			spawn_room(room)
+			if not room.next_rooms.is_empty():
+				spawn_room(room)
 	
 	# Boss room
 	var middle := floori(MapGenerator.MAP_WIDTH * 0.5)
@@ -57,14 +55,18 @@ func create_map_visuals() -> void:
 
 
 func unlock_floor(which_floor: int = floors_climbed) -> void:
+	selection_locked = false
+	
 	for map_room: MapRoom in rooms.get_children():
 		if map_room.room.row == which_floor:
 			map_room.available = true
 
 
 func unlock_next_rooms() -> void:
+	selection_locked = false
+	
 	for map_room: MapRoom in rooms.get_children():
-		if last_room.next_rooms.has(map_room.room):
+		if last_room != null and last_room.next_rooms.has(map_room.room):
 			map_room.available = true
 
 
@@ -102,9 +104,13 @@ func connect_lines(room: Room) -> void:
 
 
 func on_map_room_selected(room: Room) -> void:
+	if selection_locked:
+		return
+	
+	selection_locked = true
+	
 	for map_room: MapRoom in rooms.get_children():
-		if map_room.room.row == room.row:
-			map_room.available = false
+		map_room.available = false
 	
 	last_room = room
 	floors_climbed += 1

@@ -27,9 +27,6 @@ func _ready() -> void:
 	test_room.type = Room.Type.CAMPFIRE
 	test_room.position = Vector2(100, 100)
 	room = test_room
-	
-	await get_tree().create_timer(3).timeout
-	available = true
 
 
 func set_available(new_value: bool) -> void:
