@@ -25,7 +25,7 @@ func set_mana(value: int) -> void:
 
 
 func reset_mana() -> void:
-	self.mana = max_mana
+	mana = max_mana
 
 
 func can_play_card(card: Card) -> bool:
@@ -40,9 +40,9 @@ func take_damage(damage: int) -> void:
 
 
 func create_instance() -> Resource:
-	var instance: CharacterStats = self.duplicate()
+	var instance: CharacterStats = duplicate()
 	instance.health = max_health
-	instance.block = self.block
+	instance.block = block
 	instance.reset_mana()
 	instance.deck = instance.starting_deck.duplicate()
 	instance.draw_pile = CardPile.new()

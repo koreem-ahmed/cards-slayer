@@ -106,9 +106,9 @@ func on_battle_won() -> void:
 	reward_scene.add_card_reward()
 	
 
+#fffffjjjjjjjjjjjjjjjjjjjjjjjjjkj;lkjkkjjjjjjjjjjjjfffffffffffffffffffffgfffffffffffffffffff
 
 func on_map_exited(room: Room) -> void:
-	print("Run received map_exited: ", Room.Type.keys()[room.type])
 	
 	match room.type:
 		Room.Type.MONSTER:
