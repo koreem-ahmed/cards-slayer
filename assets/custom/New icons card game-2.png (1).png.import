@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ye8vaxgw7ap"
-path="res://.godot/imported/cards-1.png.png-4e69af04c3541266d7d668b6140c31e7.ctex"
+uid="uid://b3of0a76eoc4d"
+path="res://.godot/imported/New icons card game-2.png (1).png-3091cbe1c11360d331c23a3e4c28a568.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/custom/cards-1.png.png"
-dest_files=["res://.godot/imported/cards-1.png.png-4e69af04c3541266d7d668b6140c31e7.ctex"]
+source_file="res://assets/custom/New icons card game-2.png (1).png"
+dest_files=["res://.godot/imported/New icons card game-2.png (1).png-3091cbe1c11360d331c23a3e4c28a568.ctex"]
 
 [params]
 

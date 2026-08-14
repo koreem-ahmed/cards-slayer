@@ -9,12 +9,12 @@ const ICONS := {
 	Room.Type.NOT_ASSIGNED: [null, Vector2.ONE],
 	Room.Type.MONSTER: [preload("res://assets/tile_0103.png"), Vector2.ONE],
 	Room.Type.TREASURE: [preload("res://assets/tile_0089.png"), Vector2.ONE],
-	Room.Type.CAMPFIRE: [preload("res://assets/player_heart.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://assets/gold.png"), Vector2(0.6, 0.6)],
-	Room.Type.BOSS: [preload("res://assets/tile_0105.png"), Vector2(1.25, 1.25)]
+	Room.Type.CAMPFIRE: [preload("res://assets/custom/New icons card game-2.png (1).png"), Vector2(0.6, 0.6)],
+	Room.Type.SHOP: [preload("res://assets/custom/shop_icon.png"), Vector2(0.6, 0.6)],
+	Room.Type.BOSS: [preload("res://assets/custom/final_boss_icon.png"), Vector2(1.25, 1.25)]
 }
 
-@onready var line_2d: Line2D = $Visuals/Line2D
+@onready var cross: TextureRect = $Visuals/cross
 @onready var sprite_2d: Sprite2D = $Visuals/Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -41,13 +41,12 @@ func set_available(new_value: bool) -> void:
 func set_room(new_data: Room) -> void:
 	room = new_data
 	position = room.position
-	line_2d.rotation_degrees = randi_range(0, 360)
 	sprite_2d.texture = ICONS[room.type][0]
 	sprite_2d.scale = ICONS[room.type][1]
 
 
 func show_selected() -> void:
-	line_2d.modulate = Color.WHITE
+	cross.modulate = Color.WHITE
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

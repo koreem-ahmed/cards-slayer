@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by76mlqtqlltn"
-path="res://.godot/imported/tooltip.png-9b4466cb26d7c64c846d5424584e00ab.ctex"
+uid="uid://cd8b2661bggi8"
+path="res://.godot/imported/mana ui-1.png.png-12fcf786db25a59de4848288c752a2da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/custom/tooltip.png"
-dest_files=["res://.godot/imported/tooltip.png-9b4466cb26d7c64c846d5424584e00ab.ctex"]
+source_file="res://assets/custom/mana ui-1.png.png"
+dest_files=["res://.godot/imported/mana ui-1.png.png-12fcf786db25a59de4848288c752a2da.ctex"]
 
 [params]
 

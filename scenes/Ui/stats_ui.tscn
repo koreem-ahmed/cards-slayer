@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bdawf6x7jc3p"]
 
 [ext_resource type="Theme" uid="uid://bfbsphhsjwiit" path="res://assets/themes/Main_theme.tres" id="1_40mrr"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://assets/tile_0102.png" id="1_rnvoh"]
 [ext_resource type="Script" uid="uid://c7xqmkesl6gbc" path="res://scenes/Ui/stats_ui.gd" id="2_fk6ku"]
 [ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://assets/heart.png" id="3_71ogg"]
+[ext_resource type="Texture2D" uid="uid://bctlgbrnnmcrd" path="res://assets/custom/shield_icon.png" id="3_fk6ku"]
 
 [node name="StatsUI" type="HBoxContainer" unique_id=291604495]
 anchors_preset = 5
@@ -23,7 +23,7 @@ theme_override_constants/separation = 0
 
 [node name="block_image" type="TextureRect" parent="Block" unique_id=223911929]
 layout_mode = 2
-texture = ExtResource("1_rnvoh")
+texture = ExtResource("3_fk6ku")
 stretch_mode = 5
 
 [node name="block_label" type="Label" parent="Block" unique_id=1197816317]
