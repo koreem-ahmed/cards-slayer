@@ -3,52 +3,37 @@
 [ext_resource type="Script" uid="uid://b12bgivyrhap3" path="res://scenes/Map/map.gd" id="1_4rr3d"]
 [ext_resource type="Script" uid="uid://cbry3rsygvhje" path="res://scenes/Map/map_generator.gd" id="2_d6mms"]
 
-[node name="Map" type="Control" unique_id=1442872731]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[sub_resource type="Gradient" id="Gradient_d6mms"]
+colors = PackedColorArray(0.21568628, 0.21568628, 0.21568628, 1, 0.4, 0.21960784, 0.20392157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_exngo"]
+gradient = SubResource("Gradient_d6mms")
+width = 50
+
+[node name="Map" type="Node2D" unique_id=443288373]
 script = ExtResource("1_4rr3d")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1785835429]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.03137255, 0.03137255, 0.03137255, 0.627451)
+[node name="Visuals" type="Node2D" parent="." unique_id=2124855631]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1751950309]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Lines" type="Node2D" parent="Visuals" unique_id=1531900966]
+unique_name_in_owner = true
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=501648558]
-layout_mode = 2
-text = "Map"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Rooms" type="Node2D" parent="Visuals" unique_id=93681655]
+unique_name_in_owner = true
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=967493009]
-custom_minimum_size = Vector2(0, 13)
-layout_mode = 2
-text = "Go Back"
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1110609452]
+offset = Vector2(128, 72)
 
 [node name="Map Generator" type="Node" parent="." unique_id=273951066]
 script = ExtResource("2_d6mms")
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="Map Background" type="CanvasLayer" parent="." unique_id=2040827619]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="Map Background" unique_id=1409964089]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_exngo")
