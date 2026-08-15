@@ -96,6 +96,13 @@ func setup_top_bar():
 	
 
 
+func on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = change_view(BATTLE_SCENE) as Battle
+	battle_scene.char_stats = character
+	battle_scene.battle_stats = preload("res://battles/tier_0_crab.tres")
+	battle_scene.start_battle()
+
+
 func on_battle_won() -> void:
 	var reward_scene := change_view(BATTLE_REWARDS_SCENE) as BattleReward
 	reward_scene.run_stats = stats
@@ -106,13 +113,12 @@ func on_battle_won() -> void:
 	reward_scene.add_card_reward()
 	
 
-#fffffjjjjjjjjjjjjjjjjjjjjjjjjjkj;lkjkkjjjjjjjjjjjjfffffffffffffffffffffgfffffffffffffffffff
 
 func on_map_exited(room: Room) -> void:
 	
 	match room.type:
 		Room.Type.MONSTER:
-			change_view(BATTLE_SCENE)
+			on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			change_view(TREASURE_SCENE)
 		Room.Type.CAMPFIRE:
@@ -120,4 +126,4 @@ func on_map_exited(room: Room) -> void:
 		Room.Type.SHOP:
 			change_view(SHOP_SCENE)
 		Room.Type.BOSS:
-			change_view(BATTLE_SCENE)
+			on_battle_room_entered(room)

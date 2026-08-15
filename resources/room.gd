@@ -5,6 +5,9 @@ class_name Room
 
 enum Type {NOT_ASSIGNED, MONSTER, TREASURE, CAMPFIRE, SHOP, BOSS}
 
+#battle room variable
+@export var battle_scene: BattleStats
+
 @export var type: Type
 @export var row: int
 @export var column: int
