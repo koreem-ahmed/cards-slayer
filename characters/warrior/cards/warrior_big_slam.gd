@@ -8,5 +8,3 @@ func apply_effects(targets: Array[Node]) -> void:
 	damage_effect.execute(targets)
 	print("this will apply status effect")
 	
-
-#hh

@@ -90,7 +90,7 @@ func take_damage(damage: int) -> void:
 	enemy_sprite.material = WHITE_SPRITE_MATERIAL
 	
 	var tween := create_tween()
-	tween.tween_callback(Shaker.shake.bind(self, 16, 0.5))
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
 	tween.tween_callback(stats.take_damage.bind(damage))
 	tween.tween_interval(0.17)
 	

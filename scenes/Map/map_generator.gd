@@ -143,7 +143,6 @@ func setup_random_room_weights() -> void:
 
 
 func setup_room_types() -> void:
-	#fda;kljjjjjjjjjjjjjjjjjjjjjjjjjfjffjjfjjf
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER

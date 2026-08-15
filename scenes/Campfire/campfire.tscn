@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://soxr47h1h5nw" path="res://scenes/Campfire/campfire.gd" id="1_lrxbu"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_lrxbu"]
+font_size = 12
+
 [node name="Campfire" type="Control" unique_id=1442872731]
 layout_mode = 3
 anchors_preset = 15
@@ -12,39 +15,45 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_lrxbu")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1785835429]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.03137255, 0.03137255, 0.03137255, 0.627451)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1751950309]
+[node name="UI" type="VBoxContainer" parent="." unique_id=1751950309]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 2.0
+offset_top = -22.0
+offset_right = 66.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=501648558]
+[node name="Title" type="Label" parent="UI" unique_id=501648558]
 layout_mode = 2
 text = "Campfire"
+label_settings = SubResource("LabelSettings_lrxbu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back btn" type="Button" parent="VBoxContainer" unique_id=967493009]
-custom_minimum_size = Vector2(0, 13)
+[node name="space" type="Control" parent="UI" unique_id=1937978899]
 layout_mode = 2
-text = "Go Back"
 
-[connection signal="pressed" from="VBoxContainer/Back btn" to="." method="_on_back_btn_pressed"]
+[node name="Rest btn" type="Button" parent="UI" unique_id=967493009]
+custom_minimum_size = Vector2(40, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Rest"
+
+[node name="Description" type="Label" parent="UI" unique_id=676966023]
+layout_mode = 2
+text = "+30% HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="character" type="TextureRect" parent="." unique_id=1342844834]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="UI/Rest btn" to="." method="_on_back_btn_pressed"]
