@@ -4,7 +4,6 @@ extends HBoxContainer
 class_name  StatsUI
 
 @onready var block_label: Label = %block_label
-@onready var health_label: Label = %health_label
 @onready var block: HBoxContainer = $Block
 @onready var health: HBoxContainer = $Health
 
