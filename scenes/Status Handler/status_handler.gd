@@ -86,4 +86,3 @@ func get_all_statuses() -> Array[Status]:
 func on_status_applied(status: Status) -> void:
 	if status.can_expire:
 		status.duration -= 1
-	

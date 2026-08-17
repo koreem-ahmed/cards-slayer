@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Status" format=3 uid="uid://3pmettiikfsq"]
+[gd_resource type="Resource" script_class="TrueStrengthStatus" format=3 uid="uid://3pmettiikfsq"]
 
 [ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://assets/tile_0127.png" id="1_5fl3q"]
-[ext_resource type="Script" uid="uid://15i1kwigc6wx" path="res://resources/status.gd" id="1_cavx0"]
+[ext_resource type="Script" uid="uid://bwl8xbf285nw0" path="res://statuses/true_strength_form.gd" id="2_5fl3q"]
 
 [resource]
-script = ExtResource("1_cavx0")
+script = ExtResource("2_5fl3q")
 id = "true_strength_form"
 icon = ExtResource("1_5fl3q")
 tooltip = "TODO"

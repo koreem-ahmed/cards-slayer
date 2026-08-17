@@ -52,7 +52,6 @@ func start_run() -> void:
 
 
 func change_view(scene: PackedScene) -> Node:
-	print("changing view")
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 	

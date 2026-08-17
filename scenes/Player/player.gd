@@ -43,6 +43,8 @@ func take_damage(damage: int) -> void:
 	
 	tween.finished.connect(
 		func():
+			sprite_2d.material = null
+			
 			if stats.health <= 0:
 				if is_instance_valid(Player):
 					Events.player_died.emit()

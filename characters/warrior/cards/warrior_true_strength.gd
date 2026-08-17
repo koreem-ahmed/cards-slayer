@@ -1,5 +1,10 @@
 extends Card
 
+const TRUE_STRENGTH_FORM = preload("res://statuses/true_strength_form.tres")
+
 
 func apply_effects(targets: Array[Node]) -> void:
-	print("this will apply cool stuff")
+	var status_effect := StatusEffect.new()
+	var true_strength := TRUE_STRENGTH_FORM.duplicate()
+	status_effect.status = true_strength
+	status_effect.execute(targets)

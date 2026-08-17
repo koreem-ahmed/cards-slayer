@@ -61,13 +61,14 @@ position = Vector2(235, 56)
 stats = ExtResource("8_40prd")
 
 [node name="Player" parent="." unique_id=357400858 instance=ExtResource("3_xhdm5")]
-position = Vector2(44, 83)
+position = Vector2(57, 83)
 stats = ExtResource("4_i3j6n")
 
 [node name="Card_Target_Selector" parent="." unique_id=663431683 instance=ExtResource("3_5f8bu")]
 
-[node name="PlayerHandler" type="Node" parent="." unique_id=760071936 node_paths=PackedStringArray("hand")]
+[node name="PlayerHandler" type="Node" parent="." unique_id=760071936 node_paths=PackedStringArray("player", "hand")]
 script = ExtResource("8_f7rmk")
+player = NodePath("../Player")
 hand = NodePath("../BattleUi/Hand")
 
 [node name="BattleUi" type="CanvasLayer" parent="." unique_id=2004036165 groups=["ui_layer"]]
