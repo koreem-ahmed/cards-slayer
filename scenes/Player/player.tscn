@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b31u28uqnn1ef" path="res://scenes/Player/player.gd" id="1_gqjuk"]
 [ext_resource type="PackedScene" uid="uid://bdawf6x7jc3p" path="res://scenes/Ui/stats_ui.tscn" id="2_gqjuk"]
 [ext_resource type="PackedScene" uid="uid://bqhq2ajioqo67" path="res://scenes/Status Handler/status_handler.tscn" id="4_c4h5g"]
+[ext_resource type="PackedScene" uid="uid://j8k1ug6vqxey" path="res://scenes/modifier_handler/modifier_handler.tscn" id="5_uiqp4"]
+[ext_resource type="PackedScene" uid="uid://b8l6uvd8ubk2b" path="res://scenes/modifier_handler/modifier.tscn" id="6_hvfru"]
 
 [node name="Player" type="Node2D" unique_id=357400858 groups=["player"]]
 script = ExtResource("1_gqjuk")
@@ -21,3 +23,13 @@ offset_top = 21.0
 offset_right = -25.0
 offset_bottom = 21.0
 status_owner = NodePath("..")
+
+[node name="Modifier Handler" parent="." unique_id=1418984046 instance=ExtResource("5_uiqp4")]
+
+[node name="Damage Dealt Modifier" parent="Modifier Handler" unique_id=1842525062 instance=ExtResource("6_hvfru")]
+
+[node name="Damage Taken Modifier" parent="Modifier Handler" unique_id=1418159641 instance=ExtResource("6_hvfru")]
+type = 1
+
+[node name="Card Cost Modifier" parent="Modifier Handler" unique_id=108972878 instance=ExtResource("6_hvfru")]
+type = 2

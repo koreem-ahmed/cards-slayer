@@ -4,10 +4,21 @@ extends Status
 class_name MuscleStatus
 
 
-func initialize_status(_target: Node) -> void:
-	status_changed.connect(on_status_changed)
-	on_status_changed
+func initialize_status(target: Node) -> void:
+	status_changed.connect(on_status_changed.bind(target))
+	on_status_changed(target)
 
 
-func on_status_changed() -> void:
-	print("muscle statuse: +%s damage" % stacks)
+func on_status_changed(target: Node) -> void:
+	assert(target.get("modifier_handler"), "No modifiers on %s" % target)
+	
+	var dmg_dealt_modifier: Modifier = target.modifier_handler.get_modifier(Modifier.Type.DMG_DEALT)
+	assert(dmg_dealt_modifier, "No dmg dealt modifier on %s" % target)
+	
+	var muscle_modifier_value := dmg_dealt_modifier.get_value("muscle")
+	
+	if not muscle_modifier_value:
+		muscle_modifier_value = ModifierValue.create_new_modifier("muscle", ModifierValue.Type.FLAT)
+	
+	muscle_modifier_value.flat_value = stacks
+	dmg_dealt_modifier.add_new_value(muscle_modifier_value)

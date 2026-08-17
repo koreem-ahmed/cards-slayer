@@ -3,11 +3,14 @@ extends Node2D
 
 class_name  Player
 
+const WHITE_SPRITE_MATERIAL = preload("res://assets/themes/white_sprite_material.gdshader")
+
 @export var stats: CharacterStats : set = set_character_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var status_handler: StatusHandler = $StatusHandler
+@onready var modifier_handler: ModifierHandler = $"Modifier Handler"
 
 
 func set_character_stats(value: CharacterStats) -> void:
