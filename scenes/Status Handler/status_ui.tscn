@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d1bfv1rh75v0d"]
+
+[ext_resource type="Script" uid="uid://dbcblf8th2i0p" path="res://scenes/Status Handler/status_ui.gd" id="1_xsxyb"]
+[ext_resource type="Texture2D" uid="uid://da22yje5doofw" path="res://assets/gold.png" id="1_yx68b"]
+[ext_resource type="Resource" uid="uid://3pmettiikfsq" path="res://statuses/true_strength_form.tres" id="2_2mrfh"]
+
+[node name="StatusUI" type="Control" unique_id=2041390152]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xsxyb")
+status = ExtResource("2_2mrfh")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=899638787]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("1_yx68b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Duration" type="Label" parent="." unique_id=146407406]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 13.0
+offset_bottom = 11.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stacks" type="Label" parent="." unique_id=697405930]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 13.0
+offset_bottom = 11.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1

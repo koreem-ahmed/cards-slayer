@@ -36,4 +36,3 @@ vertical_alignment = 1
 
 [node name="Health" parent="." unique_id=1339016128 instance=ExtResource("4_fk6ku")]
 layout_mode = 2
-show_max_hp = true

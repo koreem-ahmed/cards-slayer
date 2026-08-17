@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://b7jss455uedle"]
+
+[ext_resource type="Texture2D" uid="uid://ci8hmlimkt0j7" path="res://assets/expose.png" id="1_0rmh8"]
+[ext_resource type="Script" uid="uid://15i1kwigc6wx" path="res://resources/status.gd" id="1_2f4nr"]
+
+[resource]
+script = ExtResource("1_2f4nr")
+id = "exposed"
+stack_type = 2
+can_expire = true
+duration = 1
+icon = ExtResource("1_0rmh8")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://15i1kwigc6wx"

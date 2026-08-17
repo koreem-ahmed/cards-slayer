@@ -10,6 +10,7 @@ const SHOP_SCENE := preload("res://scenes/Shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/Treasure/treasure.tscn")
 
 @export var run_startup: RunStartup
+@onready var health_ui: HealthUI = %"Health UI"
 
 @onready var map: Map = $Map
 @onready var current_view: Node = $"Current view"
@@ -38,7 +39,6 @@ func _ready() -> void:
 			start_run()
 		RunStartup.Type.CONTINUED_RUN:
 			print("TODO: loade previous run")
-	
 
 
 func start_run() -> void:
@@ -89,11 +89,12 @@ func setup_event_connections() -> void:
 
 
 func setup_top_bar():
+	character.stats_changed.connect(health_ui.update_stats.bind(character))
+	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
-	
 
 
 func on_battle_room_entered(room: Room) -> void:

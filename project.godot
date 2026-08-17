@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cards Slayer"
-run/main_scene="uid://2twojcaq2v40"
+run/main_scene="uid://dpekgnxmi2vp4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://btpnwcktd5mra"
 
