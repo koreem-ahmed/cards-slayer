@@ -15,6 +15,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://assets/themes/white_sprite_materia
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var status_handler: StatusHandler = $StatusHandler
+@onready var modifier_handler: ModifierHandler = $"Modifier Handler"
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action

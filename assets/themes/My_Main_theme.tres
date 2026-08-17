@@ -1,0 +1,72 @@
+[gd_resource type="Theme" format=3 uid="uid://gqtyv2gqavmd"]
+
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://assets/fonts/pixel_rpg.ttf" id="1_0y55l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rah5u"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1.3235956e-07, 0.14518896, 0.19998619, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16062859, 0.16062865, 0.16062853, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mw6ip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw6ip"]
+bg_color = Color(1.92523e-06, 0.38284862, 0.5026999, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18072194, 0.180722, 0.18072182, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mx2n"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0.27450982, 0.3647059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y55l"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.27450982, 0.3647059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4q72h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.27450982, 0.3647059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_0y55l")
+default_font_size = 6
+Button/styles/disabled = SubResource("StyleBoxFlat_rah5u")
+Button/styles/focus = SubResource("StyleBoxEmpty_mw6ip")
+Button/styles/hover = SubResource("StyleBoxFlat_mw6ip")
+Button/styles/normal = SubResource("StyleBoxFlat_5mx2n")
+Button/styles/pressed = SubResource("StyleBoxFlat_5mx2n")
+Panel/styles/panel = SubResource("StyleBoxFlat_0y55l")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_4q72h")

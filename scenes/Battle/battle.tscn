@@ -15,8 +15,8 @@
 [ext_resource type="Script" uid="uid://dumr8mwfmeb32" path="res://scenes/Ui/battle_ui.gd" id="8_peapi"]
 [ext_resource type="PackedScene" uid="uid://dlueh2bv8nvm2" path="res://scenes/Ui/mana_ui.tscn" id="11_ikqpk"]
 [ext_resource type="PackedScene" uid="uid://8rwbobhddv3c" path="res://scenes/Ui/tool_tip.tscn" id="12_f7rmk"]
-[ext_resource type="Theme" uid="uid://bfbsphhsjwiit" path="res://assets/themes/Main_theme.tres" id="13_8cp08"]
 [ext_resource type="Script" uid="uid://q8bf5pectr62" path="res://scenes/Ui/red_flash.gd" id="15_peapi"]
+[ext_resource type="Theme" uid="uid://gqtyv2gqavmd" path="res://assets/themes/My_Main_theme.tres" id="16_f8yol"]
 [ext_resource type="PackedScene" uid="uid://c2bq4q81cxky7" path="res://scenes/Ui/card_pile_opener.tscn" id="17_2c3p5"]
 [ext_resource type="PackedScene" uid="uid://btgqmsjinreoj" path="res://scenes/Ui/battle_over_panel.tscn" id="17_7atfu"]
 [ext_resource type="Texture2D" uid="uid://bhxpy5r3yv13" path="res://assets/discard.png" id="18_f8yol"]
@@ -74,7 +74,7 @@ hand = NodePath("../BattleUi/Hand")
 [node name="BattleUi" type="CanvasLayer" parent="." unique_id=2004036165 groups=["ui_layer"]]
 script = ExtResource("8_peapi")
 
-[node name="Hand" type="HBoxContainer" parent="BattleUi" unique_id=2007646294]
+[node name="Hand" type="HBoxContainer" parent="BattleUi" unique_id=2007646294 node_paths=PackedStringArray("player")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -87,6 +87,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 script = ExtResource("2_jl7sv")
+player = NodePath("../../Player")
 
 [node name="ManaUI" parent="BattleUi" unique_id=594585418 instance=ExtResource("11_ikqpk")]
 offset_top = -43.0
@@ -104,13 +105,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -51.0
-offset_top = -39.0
-offset_right = -6.0
-offset_bottom = -25.0
+offset_left = -52.0
+offset_top = -38.0
+offset_right = -7.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("13_8cp08")
+theme = ExtResource("16_f8yol")
 text = "End Turn"
 
 [node name="Draw Pile btn" parent="BattleUi" unique_id=708151757 node_paths=PackedStringArray("counter") instance=ExtResource("17_2c3p5")]

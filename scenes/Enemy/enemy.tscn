@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bdawf6x7jc3p" path="res://scenes/Ui/stats_ui.tscn" id="3_o5uld"]
 [ext_resource type="PackedScene" uid="uid://j5f613t2qfx8" path="res://scenes/Ui/intent_ui.tscn" id="5_grfqg"]
 [ext_resource type="PackedScene" uid="uid://bqhq2ajioqo67" path="res://scenes/Status Handler/status_handler.tscn" id="6_eacat"]
+[ext_resource type="PackedScene" uid="uid://j8k1ug6vqxey" path="res://scenes/modifier_handler/modifier_handler.tscn" id="7_wfr8x"]
+[ext_resource type="PackedScene" uid="uid://b8l6uvd8ubk2b" path="res://scenes/modifier_handler/modifier.tscn" id="8_ebm38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3j6n"]
 
@@ -39,6 +41,13 @@ offset_top = 21.0
 offset_right = -28.0
 offset_bottom = 21.0
 status_owner = NodePath("..")
+
+[node name="Modifier Handler" parent="." unique_id=1418984046 instance=ExtResource("7_wfr8x")]
+
+[node name="Damage Dealt Modifier" parent="Modifier Handler" unique_id=1842525062 instance=ExtResource("8_ebm38")]
+
+[node name="Damage Taken Modifier" parent="Modifier Handler" unique_id=1429981983 instance=ExtResource("8_ebm38")]
+type = 1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -29,7 +29,7 @@ const RARITY_COLORS := {
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
 
-#dddsssasdfasdffsaffffff
+
 func get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets:
 		return []
@@ -47,16 +47,16 @@ func get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 	
 
-func play(targets: Array[Node], char_stats: CharacterStats) -> void:
+func play(targets: Array[Node], char_stats: CharacterStats, modifier: ModifierHandler) -> void:
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
 	
 	if is_single_targeted():
-		apply_effects(targets)
+		apply_effects(targets, modifier)
 	else:
-		apply_effects(get_targets(targets))
+		apply_effects(get_targets(targets), modifier)
 
 
-func apply_effects(_targets: Array[Node]) -> void:
+func apply_effects(_targets: Array[Node], _modifiers: ModifierHandler) -> void:
 	pass
 	
