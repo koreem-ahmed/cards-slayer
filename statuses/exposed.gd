@@ -16,5 +16,13 @@ func initialize_status(target: Node) -> void:
 	
 	if not exposed_modifier_value:
 		exposed_modifier_value = ModifierValue.create_new_modifier("exposed", ModifierValue.Type.PRECENT_BASED)
-		exposed_modifier_value.precent_value = MODIFIER
+		exposed_modifier_value.percent_value = MODIFIER
+		dmg_taken_modifier.add_new_value(exposed_modifier_value)
 	
+	if not status_changed.is_connected(on_status_chaged):
+		status_changed.connect(on_status_chaged.bind(dmg_taken_modifier))
+
+
+func on_status_chaged(dmg_taken_modifier: Modifier) -> void:
+	if duration <= 0 and dmg_taken_modifier:
+		dmg_taken_modifier.remove_value("exposed")
