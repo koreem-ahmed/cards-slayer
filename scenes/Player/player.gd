@@ -7,6 +7,7 @@ class_name  Player
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
+@onready var status_handler: StatusHandler = $StatusHandler
 
 
 func set_character_stats(value: CharacterStats) -> void:
@@ -47,5 +48,3 @@ func take_damage(damage: int) -> void:
 					Events.player_died.emit()
 					queue_free()
 	)
-	
-	
