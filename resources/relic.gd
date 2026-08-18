@@ -23,7 +23,7 @@ func activate_relic(_owner: RelicUI) -> void:
 	pass
 
 
-func deactivare_relic(_owner: RelicUI) -> void:
+func deactivate_relic(_owner: RelicUI) -> void:
 	pass
 
 

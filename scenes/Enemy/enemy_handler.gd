@@ -9,7 +9,7 @@ var acting_enemies: Array[Enemy] = []
 func _ready() -> void:
 	Events.enemy_died.connect(on_enemy_died)
 	Events.enemy_action_completed.connect(on_enemy_action_completed)
-	Events.player_hand_draw.connect(on_player_hand_drawn)
+	Events.player_hand_drawn.connect(on_player_hand_drawnn)
 
 
 func setup_enemies(battle_stats: BattleStats) -> void:
@@ -77,6 +77,6 @@ func on_enemy_action_completed(enemy: Enemy) -> void:
 	enemy.status_handler.apply_statuses_by_type(Status.Type.END_OF_TURN)
 
 
-func on_player_hand_drawn() -> void:
+func on_player_hand_drawnn() -> void:
 	for enemy: Enemy in get_children():
 		enemy.update_intent()

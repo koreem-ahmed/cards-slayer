@@ -6,6 +6,7 @@ class_name Battle
 @export var battle_stats: BattleStats
 @export var char_stats: CharacterStats
 @export var music: AudioStream
+@export var relics: RelicHandler
 
 @onready var battle_ui: CanvasLayer = $BattleUi
 @onready var player_handler: PlayerHandler = $PlayerHandler
@@ -22,7 +23,6 @@ func _ready() -> void:
 	Events.player_died.connect(on_player_died)
 
 
-
 func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
@@ -32,18 +32,28 @@ func start_battle() -> void:
 	enemy_handler.setup_enemies(battle_stats)
 	enemy_handler.reset_enemy_actions()
 	
-	player_handler.start_battle(char_stats)
-	battle_ui.initialize_card_pile_ui()
+	relics.relics_activated.connect(on_relics_activated)
+	relics.activate_relics_by_type(Relic.Type.START_OF_COMBAT)
+
+
+func _on_enemy_handler_child_order_changed() -> void:
+	if enemy_handler.get_child_count() == 0 and is_instance_valid(relics):
+		relics.activate_relics_by_type(Relic.Type.END_OF_COMBAT)
+
 
 func on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 
 
-func _on_enemy_handler_child_order_changed() -> void:
-	if enemy_handler.get_child_count() == 0:
-		Events.battle_over_screen_requested.emit("Victorious", BattleOverPanel.Type.WIN)
-
-
 func on_player_died() -> void:
 	Events.battle_over_screen_requested.emit("Game Over", BattleOverPanel.Type.LOSE)
+
+
+func on_relics_activated(type: Relic.Type) -> void:
+	match type:
+		Relic.Type.START_OF_COMBAT:
+			player_handler.start_battle(char_stats)
+			battle_ui.initialize_card_pile_ui()
+		Relic.Type.END_OF_COMBAT:
+			Events.battle_over_screen_requested.emit("Victorious!", BattleOverPanel.Type.WIN)

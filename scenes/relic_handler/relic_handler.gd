@@ -31,13 +31,13 @@ func activate_relics_by_type(type: Relic.Type) -> void:
 	
 	var tween := create_tween()
 	for relic_ui: RelicUI in relic_queue:
-		tween.tween_callback(relic_ui.relic.activate_relic.bing(relic_ui))
+		tween.tween_callback(relic_ui.relic.activate_relic.bind(relic_ui))
 		tween.tween_interval(RELIC_APPLY_INTERVAL)
 	
 	tween.finished.connect(func(): relics_activated.emit(type))
 
 
-func add_ralics(relics_array: Array[Relic]) -> void:
+func add_relics(relics_array: Array[Relic]) -> void:
 	for relic: Relic in relics_array:
 		add_relic(relic)
 
@@ -53,7 +53,7 @@ func add_relic(relic: Relic) -> void:
 	
 
 
-func had_relic(id: String) -> bool:
+func has_relic(id: String) -> bool:
 	for relic_ui: RelicUI in relics.get_children():
 		if relic_ui.relic.id == id and is_instance_valid(relic_ui):
 			return true
@@ -85,4 +85,4 @@ func on_relics_child_exiting(relic_ui: RelicUI) -> void:
 		return
 	
 	if relic_ui.relic:
-		relic_ui.relic.deactivae_relic(relic_ui)
+		relic_ui.relic.deactivate_relic(relic_ui)

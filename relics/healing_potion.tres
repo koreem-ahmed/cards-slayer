@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://dhuu3dwla6xj3"]
+[gd_resource type="Resource" format=3 uid="uid://dhuu3dwla6xj3"]
 
-[ext_resource type="Script" uid="uid://raaebvopntjp" path="res://resources/relic.gd" id="1_65tca"]
 [ext_resource type="Texture2D" uid="uid://boklhiqs1414d" path="res://assets/tile_0115.png" id="1_ifyi4"]
+[ext_resource type="Script" uid="uid://im5b7uli4mjl" path="res://relics/healing_potion.gd" id="2_ifyi4"]
 
 [resource]
-script = ExtResource("1_65tca")
+script = ExtResource("2_ifyi4")
 relic_name = "Healing Potion"
 id = "healing_potion"
 type = 3

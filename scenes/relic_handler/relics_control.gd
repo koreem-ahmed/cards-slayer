@@ -23,7 +23,7 @@ func _ready() -> void:
 	right_btn.pressed.connect(on_right_btn_pressed)
 	
 	for child: RelicUI in relics.get_children():
-		child.queue_free()
+		child.free()
 	
 	relics.child_order_changed.connect(on_relics_child_order_changed)
 

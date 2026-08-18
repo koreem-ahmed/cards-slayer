@@ -15,7 +15,7 @@ class_name BattleUI
 
 
 func _ready() -> void:
-	Events.player_hand_draw.connect(on_player_hand_draw)
+	Events.player_hand_drawn.connect(on_player_hand_drawn)
 	end_turn_btn.pressed.connect(on_player_turn_ended)
 	draw_pile_btn.pressed.connect(draw_pile_view.show_current_view.bind("Draw Pile", true))
 	discard_pile_btn.pressed.connect(discard_pile_view.show_current_view.bind("Discard Pile"))
@@ -34,7 +34,7 @@ func set_char_stats(value: CharacterStats) -> void:
 	hand.char_stats = char_stats
 
 
-func on_player_hand_draw() -> void:
+func on_player_hand_drawn() -> void:
 	end_turn_btn.disabled = false
 
 

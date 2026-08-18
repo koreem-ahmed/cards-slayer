@@ -7,9 +7,6 @@ class_name ManaUI
 
 @onready var mana_label: Label = $Mana_Label
 
-func _ready() -> void:
-	await get_tree().create_timer(2).timeout
-	char_stats.mana = 3
 
 func set_char_stats(value: CharacterStats) -> void:
 	char_stats = value

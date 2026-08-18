@@ -10,7 +10,7 @@ signal card_tooltip_requested(card: Card)
 signal tooltip_hide_requested
 
 # player signals
-signal player_hand_draw
+signal player_hand_drawn
 signal player_hand_discarded 
 signal player_turn_ended
 signal player_hit
