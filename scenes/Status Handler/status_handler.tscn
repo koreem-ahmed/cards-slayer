@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://ciyapqvj0o3tb" path="res://scenes/Status Handler/status_handler.gd" id="1_jslea"]
 
 [node name="StatusHandler" type="GridContainer" unique_id=1481567573]
+mouse_filter = 0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
 script = ExtResource("1_jslea")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.5019608)
+color = Color(0, 0, 0, 0.69803923)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=893238737]
 custom_minimum_size = Vector2(200, 100)

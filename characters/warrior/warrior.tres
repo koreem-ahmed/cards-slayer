@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="1_xju84"]
 [ext_resource type="Resource" uid="uid://bqnixngysbupw" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_wgifn"]
 [ext_resource type="Resource" uid="uid://dqtcgxnd6wmf6" path="res://characters/warrior/worrior_starting_deck.tres" id="3_wgifn"]
+[ext_resource type="Resource" uid="uid://dhuu3dwla6xj3" path="res://relics/healing_potion.tres" id="5_6x0nb"]
 
 [resource]
 script = ExtResource("1_nliw2")
@@ -14,6 +15,7 @@ starting_deck = ExtResource("3_wgifn")
 draftable_cards = ExtResource("2_wgifn")
 cards_per_turn = 4
 max_mana = 3
+starting_ralic = ExtResource("5_6x0nb")
 max_health = 35
 art = ExtResource("1_xju84")
 metadata/_custom_type_script = "uid://qvbqe5cy1sgr"
