@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dpekgnxmi2vp4"]
+
+[ext_resource type="Script" uid="uid://cgfin7lombfxr" path="res://scenes/Run/run.gd" id="1_biywv"]
+[ext_resource type="PackedScene" uid="uid://dkgh6rxaleoar" path="res://scenes/Map/map.tscn" id="2_4m5yt"]
+[ext_resource type="Resource" uid="uid://xj7jct72x5bx" path="res://scenes/Run/run_startup.tres" id="2_rxkvi"]
+[ext_resource type="PackedScene" uid="uid://c6fmxlj0mu751" path="res://scenes/Ui/gold_ui.tscn" id="4_68kdb"]
+[ext_resource type="PackedScene" uid="uid://bqbewm6en0vl5" path="res://scenes/Ui/health_ui.tscn" id="4_psd1i"]
+[ext_resource type="PackedScene" uid="uid://c2bq4q81cxky7" path="res://scenes/Ui/card_pile_opener.tscn" id="4_w4jsb"]
+[ext_resource type="Texture2D" uid="uid://dmio87p8rl6n7" path="res://assets/deck.png" id="5_68kdb"]
+[ext_resource type="PackedScene" uid="uid://7mk77ltjd3te" path="res://scenes/Ui/card_pile_view.tscn" id="6_psd1i"]
+
+[node name="Run" type="Node" unique_id=656536783]
+script = ExtResource("1_biywv")
+run_startup = ExtResource("2_rxkvi")
+
+[node name="Map" parent="." unique_id=1442872731 instance=ExtResource("2_4m5yt")]
+
+[node name="Current view" type="Node" parent="." unique_id=18536698]
+
+[node name="Bebug buttons" type="VBoxContainer" parent="." unique_id=1444269304]
+visible = false
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Map btn" type="Button" parent="Bebug buttons" unique_id=469691018]
+unique_name_in_owner = true
+layout_mode = 2
+text = "map"
+
+[node name="battle btn" type="Button" parent="Bebug buttons" unique_id=486948956]
+unique_name_in_owner = true
+layout_mode = 2
+text = "battle"
+
+[node name="shop btn" type="Button" parent="Bebug buttons" unique_id=1373807606]
+unique_name_in_owner = true
+layout_mode = 2
+text = "shop"
+
+[node name="treature btn" type="Button" parent="Bebug buttons" unique_id=232085490]
+unique_name_in_owner = true
+layout_mode = 2
+text = "treature"
+
+[node name="rewards btn" type="Button" parent="Bebug buttons" unique_id=96848605]
+unique_name_in_owner = true
+layout_mode = 2
+text = "rewards"
+
+[node name="campfire btn" type="Button" parent="Bebug buttons" unique_id=2101967610]
+unique_name_in_owner = true
+layout_mode = 2
+text = "campfire"
+
+[node name="Top Bar" type="CanvasLayer" parent="." unique_id=191071414]
+layer = 3
+
+[node name="Background" type="ColorRect" parent="Top Bar" unique_id=210497507]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Bar Items" type="HBoxContainer" parent="Top Bar" unique_id=1903192724]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Health UI" parent="Top Bar/Bar Items" unique_id=1339016128 instance=ExtResource("4_psd1i")]
+unique_name_in_owner = true
+layout_mode = 2
+show_max_hp = true
+
+[node name="Gold UI" parent="Top Bar/Bar Items" unique_id=1259324775 instance=ExtResource("4_68kdb")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Placeholder" type="Control" parent="Top Bar/Bar Items" unique_id=378229097]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Deck Button" parent="Top Bar/Bar Items" unique_id=708151757 node_paths=PackedStringArray("counter") instance=ExtResource("4_w4jsb")]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("5_68kdb")
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="Top Bar/Bar Items/Deck Button" unique_id=1454812617]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 12.0
+offset_right = 6.0
+offset_bottom = 18.0
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Deck View" parent="Top Bar" unique_id=765901302 instance=ExtResource("6_psd1i")]
+unique_name_in_owner = true
+visible = false

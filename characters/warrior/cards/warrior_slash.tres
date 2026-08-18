@@ -7,10 +7,13 @@
 [resource]
 script = ExtResource("2_eofgd")
 id = "warrior_slash"
+type = null
+rarity = null
 target = 2
 cost = 2
+exhausts = null
 icon = ExtResource("1_eofgd")
-tool_tip_text = "[center]Deal [color=\"ff0000\"]4 [/color]damage
+tool_tip_text = "[center]Deal [color=\"ff0000\"]%s [/color]damage
 to all enemies.[/center]"
 sound = ExtResource("3_xnxb8")
 metadata/_custom_type_script = "uid://di45v77tnde72"
