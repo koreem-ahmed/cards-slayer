@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ca6cw6gwb2iqv" path="res://scenes/relic_handler/relic_handler.gd" id="1_f73p0"]
 [ext_resource type="Texture2D" uid="uid://cb2wppk7fucak" path="res://assets/arrow_small.png" id="2_4mcmm"]
 [ext_resource type="Texture2D" uid="uid://bavxu0pi5lbnk" path="res://assets/arrow_small_disabled.png" id="3_dumv5"]
+[ext_resource type="Script" uid="uid://c80tsdrtfxu1g" path="res://scenes/relic_handler/relics_control.gd" id="4_4mcmm"]
 [ext_resource type="PackedScene" uid="uid://cte01mvev1s7e" path="res://scenes/relic_handler/relic_ui.tscn" id="4_dxoqm"]
 
 [node name="Relic Handler" type="HBoxContainer" unique_id=173912984]
@@ -21,10 +22,13 @@ texture_disabled = ExtResource("3_dumv5")
 stretch_mode = 5
 flip_h = true
 
-[node name="Relics Control" type="Control" parent="." unique_id=1850133628]
+[node name="Relics Control" type="Control" parent="." unique_id=1850133628 node_paths=PackedStringArray("left_btn", "right_btn")]
 clip_contents = true
 custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
+script = ExtResource("4_4mcmm")
+left_btn = NodePath("../Left Btn")
+right_btn = NodePath("../Right Btn")
 
 [node name="Relics" type="HBoxContainer" parent="Relics Control" unique_id=270554329]
 unique_name_in_owner = true
@@ -53,6 +57,24 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Relic UI7" parent="Relics Control/Relics" unique_id=399209418 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI8" parent="Relics Control/Relics" unique_id=141702208 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI9" parent="Relics Control/Relics" unique_id=905617510 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI10" parent="Relics Control/Relics" unique_id=1379635742 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI11" parent="Relics Control/Relics" unique_id=136580265 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI12" parent="Relics Control/Relics" unique_id=523177652 instance=ExtResource("4_dxoqm")]
+layout_mode = 2
+
+[node name="Relic UI13" parent="Relics Control/Relics" unique_id=1106265857 instance=ExtResource("4_dxoqm")]
 layout_mode = 2
 
 [node name="Right Btn" type="TextureButton" parent="." unique_id=480467578]
