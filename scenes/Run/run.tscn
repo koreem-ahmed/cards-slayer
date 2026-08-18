@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmio87p8rl6n7" path="res://assets/deck.png" id="5_68kdb"]
 [ext_resource type="PackedScene" uid="uid://cgegd052kaen5" path="res://scenes/relic_handler/relic_handler.tscn" id="6_b2dgr"]
 [ext_resource type="PackedScene" uid="uid://7mk77ltjd3te" path="res://scenes/Ui/card_pile_view.tscn" id="6_psd1i"]
+[ext_resource type="PackedScene" uid="uid://bigkh6gcbwwd4" path="res://scenes/relic_handler/relic_tooltip.tscn" id="10_jbxqc"]
 
 [node name="Run" type="Node" unique_id=656536783]
 script = ExtResource("1_biywv")
@@ -106,5 +107,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Deck View" parent="Top Bar" unique_id=765901302 instance=ExtResource("6_psd1i")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Relic Tooltip" parent="Top Bar" unique_id=713095542 instance=ExtResource("10_jbxqc")]
 unique_name_in_owner = true
 visible = false

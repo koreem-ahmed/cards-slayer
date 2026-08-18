@@ -6,6 +6,7 @@ class_name PlayerHandler
 const HAND_DRAW_INTERVAL := 0.25
 const HAND_DISCARD_INTERVAL := 0.25
 
+@export var relics : RelicHandler
 @export var player: Player
 @export var hand: Hand
 
@@ -21,6 +22,7 @@ func start_battle(char_stats: CharacterStats) -> void:
 	character.draw_pile = character.deck.duplicate(true)
 	character.draw_pile.shuffle()
 	character.discard = CardPile.new()
+	relics.relics_activated.connect(on_relics_activated)
 	player.status_handler.statuses_applied.connect(on_statuses_applied)
 	start_turn()
 
@@ -28,11 +30,12 @@ func start_battle(char_stats: CharacterStats) -> void:
 func start_turn() -> void:
 	character.block = 0
 	character.reset_mana()
-	player.status_handler.apply_statuses_by_type(Status.Type.START_OF_TURN)
+	relics.activate_relics_by_type(Relic.Type.START_OF_TURN)
+
 
 func end_turn() -> void:
 	hand.disable_hand()
-	player.status_handler.apply_statuses_by_type(Status.Type.END_OF_TURN)
+	relics.activate_relics_by_type(Relic.Type.END_OF_TURN)
 
 
 func draw_card() -> void:
@@ -93,3 +96,11 @@ func on_statuses_applied(type: Status.Type) -> void:
 			draw_cards(character.cards_per_turn)
 		Status.Type.END_OF_TURN:
 			discard_cards()
+
+
+func on_relics_activated(type: Relic.Type) -> void:
+	match type:
+		Relic.Type.START_OF_TURN:
+			player.status_handler.apply_statuses_by_type(Status.Type.START_OF_TURN)
+		Relic.Type.END_OF_TURN:
+			player.status_handler.apply_statuses_by_type(Status.Type.END_OF_TURN)

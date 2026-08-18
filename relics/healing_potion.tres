@@ -11,6 +11,6 @@ type = 3
 character_type = 2
 starter_relic = true
 icon = ExtResource("1_ifyi4")
-tooltip = "[color=\"ffdf00\"]Endless Healing Potion[/color] 
+tooltip = "[color=\"ffdf00\"]Endless Healing Potion:[/color] 
 At the end of combat, heal 6 HP"
 metadata/_custom_type_script = "uid://raaebvopntjp"

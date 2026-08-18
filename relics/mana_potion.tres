@@ -9,6 +9,6 @@ relic_name = "Mana Potion"
 id = "mana_potion"
 type = 1
 icon = ExtResource("1_nckqy")
-tooltip = "[color=\"ffdf00\"]Rechargable Mana Potion[/color]
+tooltip = "[color=\"ffdf00\"]Rechargable Mana: Potion[/color]
 At the start of the combat, gain 1 mana"
 metadata/_custom_type_script = "uid://raaebvopntjp"

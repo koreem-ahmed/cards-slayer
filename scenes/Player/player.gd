@@ -13,12 +13,6 @@ const WHITE_SPRITE_MATERIAL = preload("res://assets/themes/white_sprite_material
 @onready var modifier_handler: ModifierHandler = $"Modifier Handler"
 
 
-func _ready() -> void:
-	var exposed := preload("res://statuses/exposed.tres").duplicate()
-	exposed.duration = 3
-	status_handler.add_status(exposed)
-
-
 func set_character_stats(value: CharacterStats) -> void:
 	stats = value
 	

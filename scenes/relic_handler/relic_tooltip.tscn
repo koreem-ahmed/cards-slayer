@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bigkh6gcbwwd4"]
+
+[ext_resource type="Script" uid="uid://c6oxnn03hqosx" path="res://scenes/relic_handler/relic_tooltip.gd" id="1_mw276"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://assets/tile_0116.png" id="2_mw276"]
+
+[node name="Relic Tooltip" type="Control" unique_id=713095542]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mw276")
+
+[node name="Background" type="ColorRect" parent="." unique_id=177112359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6156863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1947858150]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -26.0
+offset_right = 75.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Relic Icon" type="TextureRect" parent="VBoxContainer" unique_id=1206261765]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("2_mw276")
+stretch_mode = 5
+
+[node name="Relic Tooltip" type="RichTextLabel" parent="VBoxContainer" unique_id=224311201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Card DescriptionCard DescriptionCard DescriptionCard DescriptionCard DescriptionCard Description"
+fit_content = true
+
+[node name="Back Btn" type="Button" parent="." unique_id=445361575]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 18.0
+grow_horizontal = 0
+text = "Back"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
