@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://42fmwvk8p8m3"]
+
+[ext_resource type="Script" uid="uid://bi5m8ufa1xjkw" path="res://scenes/Ui/status_tooltip.gd" id="1_76v7v"]
+[ext_resource type="Texture2D" uid="uid://ci8hmlimkt0j7" path="res://assets/expose.png" id="1_ftokq"]
+
+[node name="Status Tooltip" type="HBoxContainer" unique_id=1658283026]
+custom_minimum_size = Vector2(150, 0)
+offset_right = 150.0
+offset_bottom = 15.0
+script = ExtResource("1_76v7v")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=459710593]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("1_ftokq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1522295184]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Take 50% more damage for attacks, for 5 rounds"
+vertical_alignment = 1
+autowrap_mode = 2

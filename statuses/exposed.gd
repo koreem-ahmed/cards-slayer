@@ -6,6 +6,10 @@ class_name ExposedStatus
 const MODIFIER := 0.5
 
 
+func get_tooltip() -> String:
+	return tooltip % duration
+
+
 func initialize_status(target: Node) -> void:
 	assert(target.get("modifier_handler"), "No modifiers on %s" % target)
 	
