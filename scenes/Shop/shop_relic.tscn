@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c8ku6ar3e2l4p"]
+
+[ext_resource type="Script" uid="uid://c02jpyyqmdvg6" path="res://scenes/Shop/shop_relic.gd" id="1_hbdm8"]
+[ext_resource type="PackedScene" uid="uid://cte01mvev1s7e" path="res://scenes/relic_handler/relic_ui.tscn" id="2_ga7lu"]
+[ext_resource type="Resource" uid="uid://dhuu3dwla6xj3" path="res://relics/healing_potion.tres" id="2_qvh76"]
+[ext_resource type="Texture2D" uid="uid://da22yje5doofw" path="res://assets/gold.png" id="4_a44ve"]
+
+[node name="Shop Relic" type="VBoxContainer" unique_id=1777217108]
+custom_minimum_size = Vector2(40, 42)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 2
+script = ExtResource("1_hbdm8")
+relic = ExtResource("2_qvh76")
+
+[node name="Relic Container" type="CenterContainer" parent="." unique_id=1522183935]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Relic UI" parent="Relic Container" unique_id=2133591762 instance=ExtResource("2_ga7lu")]
+layout_mode = 2
+
+[node name="Price" type="HBoxContainer" parent="." unique_id=1430395058]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="Price Label" type="Label" parent="Price" unique_id=1169783717]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gold Icon" type="TextureRect" parent="Price" unique_id=1989384578]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("4_a44ve")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buy btn" type="Button" parent="." unique_id=1569037227]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+text = "Buy"
+
+[connection signal="pressed" from="Buy btn" to="." method="_on_buy_btn_pressed"]

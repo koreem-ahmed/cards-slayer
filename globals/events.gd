@@ -30,6 +30,8 @@ signal status_tooltip_requested(statuses: Array[Status])
 signal map_exited(room: Room)
 
 # shop signals
+signal shop_relic_bought(relic: Relic, gold_cost: int)
+signal shop_card_bought(card: Card, gold_cost: int)
 signal shop_exited
 
 # campfire signals

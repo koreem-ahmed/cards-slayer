@@ -1,5 +1,21 @@
 extends Control
 
 
+class_name Shop
+
+@onready var cards: HBoxContainer = %Cards
+@onready var card_tip_popup: CardTipPopup = %"Card Tip Popup"
+
+
+func _ready() -> void:
+	for shop_card: ShopCard in cards.get_children():
+		shop_card.current_card_ui.tooltip_requested.connect(card_tip_popup.show_tooltip)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and card_tip_popup.visible:
+		card_tip_popup.hide_tooltip()
+
+
 func _on_back_btn_pressed() -> void:
 	Events.shop_exited.emit()

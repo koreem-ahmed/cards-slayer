@@ -1,6 +1,62 @@
 [gd_scene format=3 uid="uid://bb2fjk4iwqea8"]
 
 [ext_resource type="Script" uid="uid://dostko8yt0dm0" path="res://scenes/Shop/shop.gd" id="1_5khn6"]
+[ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://assets/tile_0086.png" id="2_1g71r"]
+[ext_resource type="Texture2D" uid="uid://bds8vcgshfgps" path="res://assets/shopkeeper_blink.png" id="3_v0jmt"]
+[ext_resource type="PackedScene" uid="uid://clmbpb3h6v66b" path="res://scenes/Shop/shop_card.tscn" id="4_1hecs"]
+[ext_resource type="PackedScene" uid="uid://2fy6gkgy31o8" path="res://scenes/Ui/card_tip_popup.tscn" id="5_ryl7i"]
+
+[sub_resource type="Gradient" id="Gradient_fi43r"]
+offsets = PackedFloat32Array(0.26988637, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.25882354, 0.14509805, 0.13333334, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v0jmt"]
+gradient = SubResource("Gradient_fi43r")
+fill_from = Vector2(0.625, 0)
+fill_to = Vector2(0.625, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="Animation" id="Animation_1hecs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop keeper:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1g71r")]
+}
+
+[sub_resource type="Animation" id="Animation_ryl7i"]
+resource_name = "blink"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shop keeper:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_v0jmt"), ExtResource("2_1g71r")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eetfh"]
+_data = {
+&"RESET": SubResource("Animation_1hecs"),
+&"blink": SubResource("Animation_ryl7i")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0jmt"]
+font_size = 12
 
 [node name="Shop" type="Control" unique_id=1442872731]
 layout_mode = 3
@@ -12,39 +68,105 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_5khn6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1785835429]
-layout_mode = 1
+[node name="Background Layer" type="CanvasLayer" parent="." unique_id=1459983583]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="Background Layer" unique_id=460267956]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0.03137255, 0.03137255, 0.03137255, 0.627451)
+texture = SubResource("GradientTexture2D_v0jmt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1751950309]
-layout_mode = 1
+[node name="Decoration Layer" type="CanvasLayer" parent="." unique_id=735014075]
+
+[node name="Shop keeper" type="TextureRect" parent="Decoration Layer" unique_id=292173750]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -88.0
+offset_right = 88.0
+offset_bottom = -8.0
+grow_vertical = 0
+texture = ExtResource("2_1g71r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Blinking Animation" type="AnimationPlayer" parent="Decoration Layer" unique_id=1927490059]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_eetfh")
+
+[node name="Blink Timer" type="Timer" parent="Decoration Layer" unique_id=379028488]
+unique_name_in_owner = true
+
+[node name="UI Layer" type="CanvasLayer" parent="." unique_id=439274465]
+
+[node name="Title" type="Label" parent="UI Layer" unique_id=237007484]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 28.0
+offset_top = -36.0
+offset_right = 68.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=501648558]
-layout_mode = 2
 text = "Shop"
+label_settings = SubResource("LabelSettings_v0jmt")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back btn" type="Button" parent="VBoxContainer" unique_id=967493009]
-custom_minimum_size = Vector2(0, 13)
-layout_mode = 2
-text = "Go Back"
+[node name="Back btn" type="Button" parent="UI Layer" unique_id=422565741]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -30.0
+offset_right = -59.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leave"
 
-[connection signal="pressed" from="VBoxContainer/Back btn" to="." method="_on_back_btn_pressed"]
+[node name="Shop Content" type="VBoxContainer" parent="UI Layer" unique_id=1678396890]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -21.0
+offset_right = 127.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cards" type="HBoxContainer" parent="UI Layer/Shop Content" unique_id=231316140]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Shop Card" parent="UI Layer/Shop Content/Cards" unique_id=1777217108 instance=ExtResource("4_1hecs")]
+layout_mode = 2
+
+[node name="Shop Card2" parent="UI Layer/Shop Content/Cards" unique_id=154766174 instance=ExtResource("4_1hecs")]
+layout_mode = 2
+
+[node name="Shop Card3" parent="UI Layer/Shop Content/Cards" unique_id=563638242 instance=ExtResource("4_1hecs")]
+layout_mode = 2
+
+[node name="Relics" type="HBoxContainer" parent="UI Layer/Shop Content" unique_id=2039130863]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Card Tip Popup" parent="UI Layer" unique_id=713095542 instance=ExtResource("5_ryl7i")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="UI Layer/Back btn" to="." method="_on_back_btn_pressed"]
