@@ -13,6 +13,5 @@ func _on_rest_btn_pressed() -> void:
 	animation_player.play("fade_out")
 
 
-# animation function
 func on_fade_out_finished() -> void:
 	Events.campfire_exited.emit()

@@ -121,6 +121,7 @@ func on_shop_entered() -> void:
 	shop.char_stats = character
 	shop.run_stats = stats
 	shop.relic_handler = relic_handler
+	Events.shop_entered.emit(shop)
 	shop.populate_shop()
 
 

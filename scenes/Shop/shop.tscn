@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c8ku6ar3e2l4p" path="res://scenes/Shop/shop_relic.tscn" id="5_eetfh"]
 [ext_resource type="PackedScene" uid="uid://2fy6gkgy31o8" path="res://scenes/Ui/card_tip_popup.tscn" id="5_ryl7i"]
 [ext_resource type="Resource" uid="uid://bbp1trddxy5oy" path="res://relics/explosive_barrel.tres" id="6_xaxl1"]
+[ext_resource type="PackedScene" uid="uid://j8k1ug6vqxey" path="res://scenes/modifier_handler/modifier_handler.tscn" id="12_j512n"]
+[ext_resource type="PackedScene" uid="uid://b8l6uvd8ubk2b" path="res://scenes/modifier_handler/modifier.tscn" id="13_5difm"]
 
 [sub_resource type="Gradient" id="Gradient_fi43r"]
 offsets = PackedFloat32Array(0.26988637, 1)
@@ -185,5 +187,10 @@ layout_mode = 2
 [node name="Card Tip Popup" parent="UI Layer" unique_id=713095542 instance=ExtResource("5_ryl7i")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Modifier Handler" parent="." unique_id=1418984046 instance=ExtResource("12_j512n")]
+
+[node name="Shop Cost Modifier" parent="Modifier Handler" unique_id=1842525062 instance=ExtResource("13_5difm")]
+type = 3
 
 [connection signal="pressed" from="UI Layer/Back btn" to="." method="_on_back_btn_pressed"]
