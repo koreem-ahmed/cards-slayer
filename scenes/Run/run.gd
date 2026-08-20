@@ -116,6 +116,14 @@ func on_campfire_entered() -> void:
 	campfire.char_stats = character
 
 
+func on_shop_entered() -> void:
+	var shop := change_view(SHOP_SCENE) as Shop
+	shop.char_stats = character
+	shop.run_stats = stats
+	shop.relic_handler = relic_handler
+	shop.populate_shop()
+
+
 func on_battle_won() -> void:
 	var reward_scene := change_view(BATTLE_REWARDS_SCENE) as BattleReward
 	reward_scene.run_stats = stats
@@ -135,6 +143,6 @@ func on_map_exited(room: Room) -> void:
 		Room.Type.CAMPFIRE:
 			on_campfire_entered()
 		Room.Type.SHOP:
-			change_view(SHOP_SCENE)
+			on_shop_entered()
 		Room.Type.BOSS:
 			on_battle_room_entered(room)

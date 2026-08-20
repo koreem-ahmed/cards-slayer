@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dostko8yt0dm0" path="res://scenes/Shop/shop.gd" id="1_5khn6"]
 [ext_resource type="Texture2D" uid="uid://bj3im6egs4wxx" path="res://assets/tile_0086.png" id="2_1g71r"]
+[ext_resource type="Script" uid="uid://raaebvopntjp" path="res://resources/relic.gd" id="2_jpxio"]
 [ext_resource type="Texture2D" uid="uid://bds8vcgshfgps" path="res://assets/shopkeeper_blink.png" id="3_v0jmt"]
+[ext_resource type="Resource" uid="uid://ci3w5rt342ftl" path="res://relics/coupons.tres" id="3_wri3e"]
 [ext_resource type="PackedScene" uid="uid://clmbpb3h6v66b" path="res://scenes/Shop/shop_card.tscn" id="4_1hecs"]
+[ext_resource type="Resource" uid="uid://cnve4u71ewswu" path="res://relics/mana_potion.tres" id="4_j512n"]
+[ext_resource type="Resource" uid="uid://drn1jea0cf5m5" path="res://relics/reinforced_armor.tres" id="5_5difm"]
+[ext_resource type="PackedScene" uid="uid://c8ku6ar3e2l4p" path="res://scenes/Shop/shop_relic.tscn" id="5_eetfh"]
 [ext_resource type="PackedScene" uid="uid://2fy6gkgy31o8" path="res://scenes/Ui/card_tip_popup.tscn" id="5_ryl7i"]
+[ext_resource type="Resource" uid="uid://bbp1trddxy5oy" path="res://relics/explosive_barrel.tres" id="6_xaxl1"]
 
 [sub_resource type="Gradient" id="Gradient_fi43r"]
 offsets = PackedFloat32Array(0.26988637, 1)
@@ -67,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_5khn6")
+shop_relics = Array[ExtResource("2_jpxio")]([ExtResource("3_wri3e"), ExtResource("6_xaxl1"), ExtResource("5_5difm"), ExtResource("4_j512n")])
 
 [node name="Background Layer" type="CanvasLayer" parent="." unique_id=1459983583]
 layer = 0
@@ -109,10 +116,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = -36.0
-offset_right = 68.0
-offset_bottom = -24.0
+offset_left = 27.0
+offset_top = -57.0
+offset_right = 67.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Shop"
@@ -140,10 +147,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -21.0
-offset_right = 127.0
-offset_bottom = 39.0
+offset_left = -24.0
+offset_top = -42.0
+offset_right = 116.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -163,6 +170,16 @@ layout_mode = 2
 
 [node name="Relics" type="HBoxContainer" parent="UI Layer/Shop Content" unique_id=2039130863]
 unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Shop Relic" parent="UI Layer/Shop Content/Relics" unique_id=1633442820 instance=ExtResource("5_eetfh")]
+layout_mode = 2
+
+[node name="Shop Relic2" parent="UI Layer/Shop Content/Relics" unique_id=1665963497 instance=ExtResource("5_eetfh")]
+layout_mode = 2
+
+[node name="Shop Relic3" parent="UI Layer/Shop Content/Relics" unique_id=9818644 instance=ExtResource("5_eetfh")]
 layout_mode = 2
 
 [node name="Card Tip Popup" parent="UI Layer" unique_id=713095542 instance=ExtResource("5_ryl7i")]
