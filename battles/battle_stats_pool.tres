@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b6jt6kdweqomn" path="res://battles/tier_0_bats2.tres" id="3_s5wuo"]
 [ext_resource type="Resource" uid="uid://csrto27uow8vx" path="res://battles/tier_1_bats3.tres" id="4_7ckf5"]
 [ext_resource type="Resource" uid="uid://cdabcqv51j7ps" path="res://battles/tier_1_bat_crab.tres" id="5_hpysq"]
-[ext_resource type="Resource" uid="uid://bdf8ww17qbe22" path="res://battles/tier_2_bat_crab.tres" id="6_s5wuo"]
+[ext_resource type="Resource" uid="uid://ddiq21tal4qon" path="res://battles/tier_2_toxic_ghost.tres" id="6_s5wuo"]
 
 [resource]
 script = ExtResource("2_42yw1")

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cfyhr03gimd6u"]
+
+[ext_resource type="Script" uid="uid://b4w64ivc4elsg" path="res://scenes/Win screen/win_screen.gd" id="1_k1uxv"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://assets/tile_0087.png" id="2_i2ako"]
+
+[sub_resource type="Gradient" id="Gradient_366un"]
+offsets = PackedFloat32Array(0.006147541, 1)
+colors = PackedColorArray(0.28327557, 0.13166085, 9.62615e-08, 1, 0.14584774, 0.021681929, 9.024516e-09, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nt0y2"]
+gradient = SubResource("Gradient_366un")
+width = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_40wab"]
+line_spacing = 6.0
+font_size = 12
+shadow_size = 4
+shadow_color = Color(0.56427056, 0.3634726, 0.217381, 0.75686276)
+
+[node name="Win Screen" type="Control" unique_id=721972043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1uxv")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1577286101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nt0y2")
+
+[node name="Char photo" type="TextureRect" parent="." unique_id=2029403884]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -30.0
+offset_right = -29.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i2ako")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VboxxContainer" type="VBoxContainer" parent="." unique_id=261884407]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -32.0
+offset_right = 103.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Message" type="Label" parent="VboxxContainer" unique_id=1981220248]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "The Warrior
+ is Victorious!"
+label_settings = SubResource("LabelSettings_40wab")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main Menu btn" type="Button" parent="VboxxContainer" unique_id=575486517]
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main Menu"
+
+[connection signal="pressed" from="VboxxContainer/Main Menu btn" to="." method="_on_main_menu_btn_pressed"]
