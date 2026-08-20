@@ -15,3 +15,7 @@ func _on_rest_btn_pressed() -> void:
 
 func on_fade_out_finished() -> void:
 	Events.campfire_exited.emit()
+
+
+func _on_treasure_chest_gui_input(event: InputEvent) -> void:
+	pass # Replace with function body.

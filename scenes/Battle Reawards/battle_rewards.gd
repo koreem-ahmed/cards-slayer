@@ -45,6 +45,14 @@ func add_card_reward() -> void:
 	rewards.add_child.call_deferred(card_reward)
 
 
+func add_relic_reward(relic: Relic) -> void:
+	var relic_reward := REWARD_BTN.instantiate() as RewardButton
+	relic_reward.reward_icon = relic.icon
+	relic_reward.reward_text = relic.relic_name
+	relic_reward.pressed.connect(on_relic_reward_taken.bind(relic))
+	rewards.add_child.call_deferred(relic_reward)
+
+
 func show_card_rewards() -> void:
 	if not run_stats or not character_stats:
 		return
@@ -107,6 +115,13 @@ func on_gold_reward_taken(amount: int) -> void:
 		return
 	
 	run_stats.gold += amount
+
+
+func on_relic_reward_taken(relic: Relic) -> void:
+	if not relic or not relic_handler:
+		return
+	
+	relic_handler.add_relic(relic)
 
 
 func _on_back_btn_pressed() -> void:
