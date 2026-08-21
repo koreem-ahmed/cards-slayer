@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dlikem1hnavf4"]
 
 [ext_resource type="Script" uid="uid://soxr47h1h5nw" path="res://scenes/Campfire/campfire.gd" id="1_lrxbu"]
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://assets/background.png" id="2_7v20o"]
 [ext_resource type="Resource" uid="uid://bq3wx76da57kj" path="res://characters/warrior/warrior.tres" id="2_wuiv7"]
 [ext_resource type="Texture2D" uid="uid://1sb16ku1yi1o" path="res://assets/line.png" id="3_wuiv7"]
+[ext_resource type="Texture2D" uid="uid://biihp5c1nhv5a" path="res://assets/custom/campfire animation.png" id="4_1qy8g"]
 [ext_resource type="Texture2D" uid="uid://dc7crere7e7ow" path="res://assets/tile_0099.png" id="4_fi43r"]
+[ext_resource type="Texture2D" uid="uid://bn8bbejiwl13q" path="res://assets/custom/Tent.png" id="5_50gao"]
 
 [sub_resource type="Gradient" id="Gradient_fi43r"]
 offsets = PackedFloat32Array(0.26988637, 1)
@@ -19,6 +20,77 @@ metadata/_snap_count = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_lrxbu"]
 font_size = 12
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la68s"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og51t"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ewfo"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atu3m"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ewy"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6i35"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6af5n"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whj3o"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r41io"]
+atlas = ExtResource("4_1qy8g")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecws8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la68s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og51t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ewfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atu3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2ewy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6i35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6af5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whj3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r41io")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_50gao"]
 offsets = PackedFloat32Array(0, 0.2604712, 0.42015707, 0.8206806, 1)
@@ -36,6 +108,7 @@ curve = SubResource("Curve_og51t")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_atu3m"]
 particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.1, 0.1, 1)
 emission_shape = 1
 emission_sphere_radius = 25.0
 angle_min = 60.00001
@@ -140,14 +213,13 @@ char_stats = ExtResource("2_wuiv7")
 [node name="Background Layer" type="CanvasLayer" parent="." unique_id=432411238]
 layer = 0
 
-[node name="TextureRect" type="TextureRect" parent="Background Layer" unique_id=928137436]
-visible = false
+[node name="Background" type="TextureRect" parent="Background Layer" unique_id=320110338]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7v20o")
+texture = SubResource("GradientTexture2D_1qy8g")
 
 [node name="ColorRect" type="ColorRect" parent="Background Layer" unique_id=1218584005]
 visible = false
@@ -156,15 +228,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.6313726)
-
-[node name="Background" type="TextureRect" parent="Background Layer" unique_id=320110338]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_1qy8g")
+color = Color(0, 0, 0, 1)
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=1632705176]
 
@@ -174,10 +238,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 19.0
-offset_top = -17.0
-offset_right = 83.0
-offset_bottom = 27.0
+offset_left = 24.0
+offset_top = -25.0
+offset_right = 88.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -207,21 +271,45 @@ vertical_alignment = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = -55.0
-offset_right = 55.0
-offset_bottom = -12.0
+offset_left = 40.0
+offset_top = -48.0
+offset_right = 73.0
+offset_bottom = -8.0
 grow_vertical = 0
 texture = ExtResource("4_fi43r")
 stretch_mode = 5
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI Layer" unique_id=499282047]
+position = Vector2(115, 111.99999)
+scale = Vector2(1.5625, 1.53125)
+sprite_frames = SubResource("SpriteFrames_ecws8")
+autoplay = "default"
+frame_progress = 0.9493756
+
+[node name="Sprite2D" type="Sprite2D" parent="UI Layer" unique_id=1561100485]
+position = Vector2(203, 109.00001)
+scale = Vector2(2.1875, 2.2499998)
+texture = ExtResource("5_50gao")
+flip_h = true
+
 [node name="Particles Layers" type="CanvasLayer" parent="." unique_id=651528955]
 
 [node name="Flames" type="GPUParticles2D" parent="Particles Layers" unique_id=1833071816]
-position = Vector2(99, 99)
-amount = 150
+position = Vector2(124, 120)
+amount = 10
 texture = ExtResource("3_wuiv7")
-lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_atu3m")
+
+[node name="Flames2" type="GPUParticles2D" parent="Particles Layers" unique_id=1880327747]
+position = Vector2(115, 112)
+amount = 10
+texture = ExtResource("3_wuiv7")
+process_material = SubResource("ParticleProcessMaterial_atu3m")
+
+[node name="Flames3" type="GPUParticles2D" parent="Particles Layers" unique_id=738697647]
+position = Vector2(106, 121)
+amount = 10
+texture = ExtResource("3_wuiv7")
 process_material = SubResource("ParticleProcessMaterial_atu3m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=310063676]

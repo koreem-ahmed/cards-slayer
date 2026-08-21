@@ -11,19 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c8ku6ar3e2l4p" path="res://scenes/Shop/shop_relic.tscn" id="5_eetfh"]
 [ext_resource type="PackedScene" uid="uid://2fy6gkgy31o8" path="res://scenes/Ui/card_tip_popup.tscn" id="5_ryl7i"]
 [ext_resource type="Resource" uid="uid://bbp1trddxy5oy" path="res://relics/explosive_barrel.tres" id="6_xaxl1"]
+[ext_resource type="Texture2D" uid="uid://p3kun4csq3n8" path="res://assets/custom/shop bg.png" id="9_5difm"]
 [ext_resource type="PackedScene" uid="uid://j8k1ug6vqxey" path="res://scenes/modifier_handler/modifier_handler.tscn" id="12_j512n"]
 [ext_resource type="PackedScene" uid="uid://b8l6uvd8ubk2b" path="res://scenes/modifier_handler/modifier.tscn" id="13_5difm"]
-
-[sub_resource type="Gradient" id="Gradient_fi43r"]
-offsets = PackedFloat32Array(0.26988637, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.25882354, 0.14509805, 0.13333334, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v0jmt"]
-gradient = SubResource("Gradient_fi43r")
-fill_from = Vector2(0.625, 0)
-fill_to = Vector2(0.625, 1)
-metadata/_snap_enabled = true
-metadata/_snap_count = 8
 
 [sub_resource type="Animation" id="Animation_1hecs"]
 length = 0.001
@@ -80,13 +70,34 @@ shop_relics = Array[ExtResource("2_jpxio")]([ExtResource("3_wri3e"), ExtResource
 [node name="Background Layer" type="CanvasLayer" parent="." unique_id=1459983583]
 layer = 0
 
-[node name="Background" type="TextureRect" parent="Background Layer" unique_id=460267956]
+[node name="ColorRect" type="ColorRect" parent="Background Layer" unique_id=1579677657]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 94.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_v0jmt")
+color = Color(0.37254903, 0.24313726, 0.17254902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Background Layer" unique_id=1761964950]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9137255, 0.9137255, 0.7137255, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Background Layer" unique_id=1158629407]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_right = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14509805, 0.09411765, 0.07058824, 1)
 
 [node name="Decoration Layer" type="CanvasLayer" parent="." unique_id=735014075]
 
@@ -95,9 +106,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_top = -88.0
+offset_top = -87.0
 offset_right = 88.0
-offset_bottom = -8.0
+offset_bottom = -7.0
 grow_vertical = 0
 texture = ExtResource("2_1g71r")
 expand_mode = 1
@@ -109,6 +120,16 @@ libraries/ = SubResource("AnimationLibrary_eetfh")
 
 [node name="Blink Timer" type="Timer" parent="Decoration Layer" unique_id=379028488]
 unique_name_in_owner = true
+
+[node name="Foreground" type="CanvasLayer" parent="." unique_id=688008906]
+
+[node name="Foreground" type="TextureRect" parent="Foreground" unique_id=582250299]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_5difm")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=439274465]
 
