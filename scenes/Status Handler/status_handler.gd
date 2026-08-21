@@ -91,3 +91,13 @@ func on_status_applied(status: Status) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		Events.status_tooltip_requested.emit(get_all_statuses())
+
+
+
+
+
+
+
+
+
+# Kill all the enemies and with the game

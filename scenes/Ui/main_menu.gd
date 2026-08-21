@@ -1,16 +1,22 @@
 extends Control
 
 const CHAR_SELECTOR_SCENE = preload("res://scenes/Ui/char_selector.tscn")
+const RUN_SCENE = preload("res://scenes/Run/run.tscn")
+
+@export var run_startup: RunStartup
+
 
 @onready var continue_btn: Button = %"Continue btn"
 
 
 func _ready() -> void:
 	get_tree().paused = false
+	continue_btn.disabled = SaveGame.load_data() == null
 
 
 func _on_continue_pressed() -> void:
-	print("TODO: load a saved file for the game")
+	run_startup.type = RunStartup.Type.CONTINUED_RUN
+	get_tree().change_scene_to_packed(RUN_SCENE)
 
 
 func _on_new_run_pressed() -> void:
