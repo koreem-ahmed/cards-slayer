@@ -42,6 +42,18 @@ func generate_new_map() -> void:
 	create_map_visuals()
 
 
+func load_map(saved_map_data: Array[Array], saved_floors_climbed: int, saved_last_room: Room) -> void:
+	floors_climbed = saved_floors_climbed
+	map_data = saved_map_data
+	last_room = saved_last_room
+	create_map_visuals()
+
+	if floors_climbed > 0:
+		unlock_next_rooms()
+	else:
+		unlock_floor()
+
+
 func create_map_visuals() -> void:
 	for current_floor: Array in map_data:
 		for room: Room in current_floor:

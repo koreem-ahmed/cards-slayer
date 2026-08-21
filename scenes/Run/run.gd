@@ -9,6 +9,7 @@ const CAMPFIRE_SCENE := preload("res://scenes/Campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://scenes/Shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/Treasure/treasure.tscn")
 const WIN_SCREEN_SCENE = preload("res://scenes/Win screen/win_screen.tscn")
+const MAIN_MENU_SCENE = "res://scenes/Ui/main_menu.tscn"
 
 @export var run_startup: RunStartup
 @onready var health_ui: HealthUI = %"Health UI"
@@ -20,6 +21,7 @@ const WIN_SCREEN_SCENE = preload("res://scenes/Win screen/win_screen.tscn")
 @onready var relic_tooltip: RelicTooltip = %"Relic Tooltip"
 @onready var deck_button: CardPileOpener = %"Deck Button"
 @onready var deck_view: CardPileView = %"Deck View"
+@onready var pause_menu: PauseMenu = $"Pause Menu"
 
 @onready var map_btn: Button = %"Map btn"
 @onready var battle_btn: Button = %"battle btn"
@@ -30,23 +32,22 @@ const WIN_SCREEN_SCENE = preload("res://scenes/Win screen/win_screen.tscn")
 
 var stats: RunStats
 var character: CharacterStats
+var save_data: SaveGame
 
 
 func _ready() -> void:
 	if not run_startup:
 		return
-	
+
+	pause_menu.save_and_quit.connect(on_save_and_quit)
+
 	match run_startup.type:
 		RunStartup.Type.NEW_RUN:
 			character = run_startup.picked_char.create_instance()
 			start_run()
 		RunStartup.Type.CONTINUED_RUN:
-			print("TODO: loade previous run")
+			load_run()
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("cheat"):
-		get_tree().call_group("enemies", "queue_free")
 
 func start_run() -> void:
 	stats = RunStats.new()
@@ -56,6 +57,53 @@ func start_run() -> void:
 	
 	map.generate_new_map()
 	map.unlock_floor(0)
+
+	save_data = SaveGame.new()
+	save_run(true)
+
+
+func save_run(was_on_map: bool) -> void:
+	if not save_data:
+		save_data = SaveGame.new()
+
+	save_data.run_stats = stats
+	save_data.char_stats = character
+	save_data.current_deck = character.deck
+	save_data.current_heal = character.health
+	save_data.relics = relic_handler.get_all_relics()
+	save_data.map_data = map.map_data.duplicate()
+	save_data.last_room = map.last_room
+	save_data.floors_climbed = map.floors_climbed
+	save_data.was_on_map = was_on_map
+
+	var error := save_data.save_data()
+	if error != OK:
+		push_error("Couldn't save the game: %s" % error_string(error))
+
+
+func load_run() -> void:
+	save_data = SaveGame.load_data()
+	if not save_data:
+		character = run_startup.picked_char.create_instance()
+		start_run()
+		return
+
+	stats = save_data.run_stats
+	character = save_data.char_stats
+	character.deck = save_data.current_deck
+	character.health = save_data.current_heal
+
+	relic_handler.add_relics(save_data.relics)
+	setup_top_bar()
+	setup_event_connections()
+	map.load_map(save_data.map_data, save_data.floors_climbed, save_data.last_room)
+
+	if save_data.last_room and not save_data.was_on_map:
+		on_map_exited(save_data.last_room)
+
+
+func on_save_and_quit() -> void:
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
 
 
 func change_view(scene: PackedScene) -> Node:
@@ -77,12 +125,15 @@ func show_map() -> void:
 	map.show_map()
 	map.unlock_next_rooms()
 
+	save_run(true)
+
 
 func setup_event_connections() -> void:
 	Events.battle_won.connect(on_battle_won)
 	Events.battle_reward_exited.connect(show_map)
 	Events.campfire_exited.connect(show_map)
 	Events.map_exited.connect(on_map_exited)
+	Events.player_died.connect(on_player_died)
 	Events.shop_exited.connect(show_map)
 	Events.treasure_room_exited.connect(on_treasure_room_exited)
 	
@@ -158,13 +209,20 @@ func on_battle_won() -> void:
 	if map.floors_climbed == MapGenerator.FLOORS:
 		var win_screen := change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character
+		SaveGame.delete_data()
 	else:
 		show_regular_battle_rewards()
+		SaveGame.delete_data()
 	
-	
+
+
+func on_player_died() -> void:
+	SaveGame.delete_data()
 
 
 func on_map_exited(room: Room) -> void:
+	save_run(false)
+
 	match room.type:
 		Room.Type.MONSTER:
 			on_battle_room_entered(room)
