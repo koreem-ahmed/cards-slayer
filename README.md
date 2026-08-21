@@ -2,10 +2,10 @@
 ### by Karim Ahmed
 
 
-## Gamplay:
+### Gamplay:
 It is a very basic card game which you have turns on your turn you can play cards (attack / block / skill) those cards cost mana and the mana system works that for every turn you have 3 mana
 After your turn the game apply ralics which are close to powerups each one has an effect on you or on the enemy you can click on it to view what it deos
-The cards also you can hover over them so a tip will appear for each card and there are sm called status or effects they are under you character or under an enemy also click on it so you can see what it deos
+The cards also you can hover over them so a tip will appear for each card and there are sm called status or effects they are under you character or under an enemy also click on it so you can see what it deos.
 
 ### Cards:
 Axe: Deal 6 dmg to one enemy.
@@ -26,14 +26,10 @@ Exposed: Makes the owner of it take 3 more dmg for any attack preformed on him.
 Muscle: Makes the owner deal 1 more dmg for each muscle he has on any of his attacks.
 
 ## Main Story:
-It all began in 989 There was a bad king called "carter". This king was an alien and no body know that so there was 3 friends a mage, warrior, and an assassin. This group of the 3 guys are captured and in the prison under the grounnd so you play as a character of our group and then the game begins.
-
+It all began in 989 There was a bad king called "carter". This king was an alien and no body know that so there was 3 friends a mage, warrior, and an assassin. This group of the 3 guys are captured and in the prison under the ground so you play as a character of our group and then the game begins. the game seeks the idea of scaping the underground basement and the enemies in it.
 
 ## How to win:
 Kill all the enemies and The boss fight and then you will win the turnment.
-
-## Game architect:
-
 
 ## How the game works:
 ### Map generator: 
@@ -53,8 +49,6 @@ Same as the battle scenes but with a more dangrouse enemy and new effects.
 
 
 ## Credits:
-Assets: https://kenney.nl/assets/tiny-dungeon
-Sounds:
-Weighted chance based action idea: 
-https://kehomsforge.com/tutorials/single/weighted-random-selection-godot/
-map generator idea: https://kosgames.com/slay-the-spire-map-generation-guide-26769/
+Assets: https://kenney.nl/assets/tiny-dungeon <br>
+Weighted chance based action idea: https://kehomsforge.com/tutorials/single/weighted-random-selection-godot/ <br>
+map generator idea: https://kosgames.com/slay-the-spire-map-generation-guide-26769/ <br>
