@@ -39,6 +39,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_nt0y2")
 
+[node name="Background2" type="TextureRect" parent="." unique_id=805269980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nt0y2")
+
 [node name="Label" type="Label" parent="." unique_id=1399714242]
 layout_mode = 1
 anchors_preset = 8

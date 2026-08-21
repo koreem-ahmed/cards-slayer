@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://d0pck6gyqqpp5"]
+
+[ext_resource type="Texture2D" uid="uid://psr6xk3k26oh" path="res://assets/tile_0114.png" id="1_poison"]
+[ext_resource type="Script" uid="uid://d2culolj3wmkx" path="res://characters/Mage/cards/mage_poison.gd" id="2_poison"]
+[ext_resource type="AudioStream" uid="uid://cau0nuvfk3xau" path="res://assets/sounds/bottle_sound.mp3" id="3_poison"]
+
+[resource]
+script = ExtResource("2_poison")
+id = "mage_poison"
+type = 1
+rarity = 1
+target = 1
+cost = 3
+icon = ExtResource("1_poison")
+tool_tip_text = "[center]Apply [color=\"62c255\"]%s Poison[/color]. Poison deals damage at the start of the enemy's turn, then decreases by 1.[/center]"
+sound = ExtResource("3_poison")
+metadata/_custom_type_script = "uid://di45v77tnde72"

@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://assets/tile_0084.png" id="1_aw8w7"]
 [ext_resource type="Script" uid="uid://qvbqe5cy1sgr" path="res://resources/character_stats.gd" id="1_o28s3"]
-[ext_resource type="Resource" uid="uid://dqtcgxnd6wmf6" path="res://characters/warrior/worrior_starting_deck.tres" id="3_2tov5"]
+[ext_resource type="Resource" uid="uid://gx7cxg0allev" path="res://characters/Mage/mage_draftable_pile.tres" id="2_draft"]
+[ext_resource type="Resource" uid="uid://o1uwfioo0w7t" path="res://characters/Mage/mage_starting_deck.tres" id="3_start"]
+[ext_resource type="Resource" uid="uid://cnve4u71ewswu" path="res://relics/mana_potion.tres" id="4_relic"]
 
 [resource]
 script = ExtResource("1_o28s3")
@@ -10,9 +12,11 @@ char_name = "Mage"
 description = "Years of wisdom and 
 recurring back pain."
 photo = ExtResource("1_aw8w7")
-starting_deck = ExtResource("3_2tov5")
+starting_deck = ExtResource("3_start")
+draftable_cards = ExtResource("2_draft")
 cards_per_turn = 3
 max_mana = 4
+starting_ralic = ExtResource("4_relic")
 max_health = 27
 art = ExtResource("1_aw8w7")
 metadata/_custom_type_script = "uid://qvbqe5cy1sgr"

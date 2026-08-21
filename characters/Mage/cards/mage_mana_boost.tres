@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cipqc5avbjb8i"]
+
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://assets/tile_0116.png" id="1_mana"]
+[ext_resource type="Script" uid="uid://1brop6a1qhda" path="res://characters/Mage/cards/mage_mana_boost.gd" id="2_mana"]
+[ext_resource type="AudioStream" uid="uid://cau0nuvfk3xau" path="res://assets/sounds/bottle_sound.mp3" id="3_mana"]
+
+[resource]
+script = ExtResource("2_mana")
+id = "mage_mana_boost"
+type = 1
+rarity = 1
+exhausts = true
+icon = ExtResource("1_mana")
+tool_tip_text = "[center]Gain [color=\"3399ff\"]%s[/color] Mana. [color=\"ffdf00\"]Exhaust.[/color][/center]"
+sound = ExtResource("3_mana")
+metadata/_custom_type_script = "uid://di45v77tnde72"

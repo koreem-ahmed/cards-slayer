@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://gx7cxg0allev"]
+
+[ext_resource type="Script" uid="uid://di45v77tnde72" path="res://resources/card.gd" id="1_r0ing"]
+[ext_resource type="Script" uid="uid://s5feagbbf603" path="res://resources/card_pile.gd" id="2_r78ji"]
+[ext_resource type="Resource" uid="uid://dsfsfbcpe82vf" path="res://characters/Mage/cards/mage_wand.tres" id="3_wand"]
+[ext_resource type="Resource" uid="uid://bpm7eu78n0p2m" path="res://characters/Mage/cards/mage_block.tres" id="4_block"]
+[ext_resource type="Resource" uid="uid://d0pck6gyqqpp5" path="res://characters/Mage/cards/mage_poison.tres" id="5_poison"]
+[ext_resource type="Resource" uid="uid://cipqc5avbjb8i" path="res://characters/Mage/cards/mage_mana_boost.tres" id="6_mana"]
+[ext_resource type="Resource" uid="uid://ewpgiuudv3xq" path="res://characters/Mage/cards/mage_thunder_strike.tres" id="7_thunder"]
+
+[resource]
+script = ExtResource("2_r78ji")
+cards = Array[ExtResource("1_r0ing")]([ExtResource("3_wand"), ExtResource("3_wand"), ExtResource("4_block"), ExtResource("4_block"), ExtResource("5_poison"), ExtResource("5_poison"), ExtResource("6_mana"), ExtResource("6_mana"), ExtResource("7_thunder"), ExtResource("7_thunder"), ExtResource("7_thunder")])
+metadata/_custom_type_script = "uid://s5feagbbf603"

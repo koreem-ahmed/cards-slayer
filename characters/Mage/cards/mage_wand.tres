@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://dsfsfbcpe82vf"]
+
+[ext_resource type="Texture2D" uid="uid://bxgrktox5it82" path="res://assets/tile_0105.png" id="1_wand"]
+[ext_resource type="Script" uid="uid://c4ygd8vwwbc1m" path="res://characters/Mage/cards/mage_wand.gd" id="2_wand"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://assets/sounds/slash.ogg" id="3_wand"]
+
+[resource]
+script = ExtResource("2_wand")
+id = "mage_wand"
+target = 1
+cost = 1
+icon = ExtResource("1_wand")
+tool_tip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage.[/center]"
+sound = ExtResource("3_wand")
+metadata/_custom_type_script = "uid://di45v77tnde72"

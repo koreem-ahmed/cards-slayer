@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://ewpgiuudv3xq"]
+
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://assets/tile_0106.png" id="1_thunder"]
+[ext_resource type="Script" uid="uid://4t1upp3yl6ct" path="res://characters/Mage/cards/mage_thunder_strike.gd" id="2_thunder"]
+[ext_resource type="AudioStream" uid="uid://bepxbrithpxnf" path="res://assets/sounds/true_strength.ogg" id="3_thunder"]
+
+[resource]
+script = ExtResource("2_thunder")
+id = "mage_thunder_strike"
+rarity = 2
+target = 2
+cost = 3
+icon = ExtResource("1_thunder")
+tool_tip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage to all enemies.[/center]"
+sound = ExtResource("3_thunder")
+metadata/_custom_type_script = "uid://di45v77tnde72"

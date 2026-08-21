@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bpm7eu78n0p2m"]
+
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://assets/tile_0102.png" id="1_u4nvo"]
+[ext_resource type="Script" uid="uid://bsi3jyx6sds0s" path="res://characters/Mage/cards/mage_block.gd" id="2_yb5lw"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://assets/sounds/block.ogg" id="3_244jw"]
+
+[resource]
+script = ExtResource("2_yb5lw")
+id = "mage_block"
+type = 1
+cost = 1
+icon = ExtResource("1_u4nvo")
+tool_tip_text = "[center]Gain [color=\"3399ff\"]%s[/color] Block.[/center]"
+sound = ExtResource("3_244jw")
+metadata/_custom_type_script = "uid://di45v77tnde72"
